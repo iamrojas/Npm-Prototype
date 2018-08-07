@@ -23,5 +23,8 @@
 		"pretest": "npm run lint",
 		"posttest": "echo the test has been run!",
 		"bash": "Location of the bash/shell script file"
+	},
+	"dependencies": {
+		"hoek": "^5.0.3"
 	}
 }
