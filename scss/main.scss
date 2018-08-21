@@ -43,7 +43,6 @@
 	// $font-special: 'Lora', 'Papyrus';
 
 
-
 	//== Media queries breakpoints
 	//
 	//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
@@ -76,62 +75,128 @@
 	
 	$font-special:"Metrisch";
 
-
-
-
 /* ==========================================================================
 #Mixins
 ========================================================================== */
 
+	@mixin e($element){
 
-@mixin e($element){
+	  &__#{$element}{
+	    @content;
+	  }
+	}
 
-  &__#{$element}{
-    @content;
-  }
-}
+	@mixin m($modifier){
+	  &--#{$modifier}{
+	    @content;
+	  }
+	}
 
-@mixin m($modifier){
-  &--#{$modifier}{
-    @content;
-  }
-}
+	@function strip-unit($value) {
+	  @return $value / ($value * 0 + 1);
+	}
 
-@function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
-}
+	@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+		$u1: unit($min-vw);
+		$u2: unit($max-vw);
+		$u3: unit($min-font-size);
+		$u4: unit($max-font-size);
 
-@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
-	$u1: unit($min-vw);
-	$u2: unit($max-vw);
-	$u3: unit($min-font-size);
-	$u4: unit($max-font-size);
-
-	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-		& {
-			font-size: $min-font-size;
-			@media screen and (min-width: $min-vw) {
-				font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-			}
-			@media screen and (min-width: $max-vw) {
-				font-size: $max-font-size;
+		@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+			& {
+				font-size: $min-font-size;
+				@media screen and (min-width: $min-vw) {
+					font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+				}
+				@media screen and (min-width: $max-vw) {
+					font-size: $max-font-size;
+				}
 			}
 		}
 	}
-}
+
+	%padding-one{
+		padding:1rem;
+	}
+
+	%padding-two{
+		padding:2rem 1rem;
+	}
+
+	%padding-three{
+		padding:3rem 1rem;
+	}
+
+	%padding-four{
+		padding:4rem 1rem;
+	}
+
+	%padding-eight{
+		padding:8rem 1rem;
+	}
 
 /* ==========================================================================
 #Base
 ========================================================================== */
 
-$min_width: 320px;
-$max_width: 1200px;
-$min_font: 16px;
-$max_font: 24px;
+	$min_width: 320px;
+	$max_width: 1200px;
+	$min_font: 14px;
+	$max_font: 16px;
 
-html {
-  @include fluid-type($min_width, $max_width, $min_font, $max_font);
-}
+	html {
+	  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+	}
+
+	$mod_1: 1.2; // mobile
+	$mod_2: 1.408; // desktop
+
+	h1 {  
+	  font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem; 
+	  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+	}
+	h2 {  
+	  font-size: $mod_1*$mod_1*$mod_1 *1rem; 
+	  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+	}
+	h3 { 
+	  font-size: $mod_1*$mod_1 *1rem;
+	  @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+	}
+
+
+	h1,h2,h3,h4,h5{
+		margin-bottom:2rem;
+	}
+
+	p, ul, ol, pre, table, blockquote {
+	  margin-top: 0rem;
+	  margin-bottom: 1.5rem;
+	}
+	ul ul, ol ol, ul ol, ol ul {
+	  margin-top: 0rem;
+	  margin-bottom: 0rem;
+	}
+
+	/* Let's make sure all's aligned */
+	hr, .hr {
+	  border: 1px solid;
+	  margin: -1px 0;
+	}
+	a, b, i, strong, em, small, code {
+	  line-height: 0;
+	}
+	sub, sup {
+	  line-height: 0;
+	  position: relative;
+	  vertical-align: baseline;
+	}
+	sup {
+	  top: -0.5em;
+	}
+	sub {
+	  bottom: -0.25em;
+	}
 
 
 /* ==========================================================================
