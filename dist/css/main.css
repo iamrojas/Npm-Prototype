@@ -6333,6 +6333,9 @@ html {
     html {
       font-size: 16px; } }
 
+body {
+  line-height: 1.5; }
+
 h1 {
   font-size: 2.0736rem; }
   h1 {
@@ -6366,8 +6369,9 @@ h3 {
       h3 {
         font-size: 27.7545px; } }
 
-h1, h2, h3, h4, h5 {
-  margin-bottom: 2rem; }
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5;
+  margin-bottom: .8rem; }
 
 p, ul, ol, pre, table, blockquote {
   margin-top: 0rem;
