@@ -6,204 +6,280 @@
 #Fonts
 ========================================================================== */
 
+$icon-font-path: '../../fonts/';
 
-  $icon-font-path: '../../fonts/';
+@font-face {
+	font-family: 'Butler';
+	src: url($icon-font-path +  'Butler-Medium.woff2') format('woff2'),
+	url($icon-font-path +  'Butler-Medium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 
-  // @font-face {
-	 //  font-family: 'Metrisch';
-	 //  src: url($icon-font-path +  'Metrisch-ExtraLight-webfont.woff2') format('woff2'),
-		//    url($icon-font-path +  'Metrisch-ExtraLight-webfont.woff') format('woff');
-	 //  font-weight: normal;
-	 //  font-style: normal;
-  // }
-
+@font-face {
+    font-family: 'Butler';
+    src: url($icon-font-path +  'Butler-Light.woff2') format('woff2'),
+        url($icon-font-path + 'Butler-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
 
 /* ==========================================================================
 #Variables
  ========================================================================== */
-	
-	$color1: #272C2D; //dark grey
-	$color2: #C31F26;//red
-	$color3: #A7A2A9; //grey
-	$color4: #F4F7F5; //off white
-	$color5:#08090A; //black
+
+$color1: #153243; //Dark blue
+$color2: #C31F26;//red
+$color3: #A7A2A9; //grey
+$color4: #F4F7F5; //off white
+$color5:#08090A; //black
 
 
-	// //== Typography
-	// //
-	// //## Font, line-height, and color for body text, headings, and more.
+// //== Typography
+// //
+// //## Font, line-height, and color for body text, headings, and more.
 
-	// $font-family-sans-serif:  "calluna-sans",sans-serif;
-	// $font-family-serif:     'Lora', serif;
-	// //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-	// $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
-	// $font-family-base:        $font-family-sans-serif !default;
-
-
-	// $font-special: 'Lora', 'Papyrus';
+// $font-family-sans-serif:  "calluna-sans",sans-serif;
+// $font-family-serif:     'Lora', serif;
+// //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+// $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+// $font-family-base:        $font-family-sans-serif !default;
 
 
-	//== Media queries breakpoints
-	//
-	//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
-
-	$screen-sm:                  576px !default;
-	$screen-sm-min:              $screen-sm !default;
-
-	$screen-md:                  768px !default;
-	$screen-md-min:              $screen-md !default;
-
-	$screen-lg:                  992px !default;
-	$screen-lg-min:              $screen-lg !default;
-
-	$screen-xl:                  1200px !default;
-	$screen-xl-min:              $screen-lg !default;
+// $font-special: 'Lora', 'Papyrus';
 
 
-	$screen-xxl:                 1920px;
-	$screen-xxl-min:              $screen-xl !default;
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
 
-	// So media queries don't overlap when required, provide a maximum
-	$screen-sm-max:              ($screen-md-min - 1) !default;
-	$screen-md-max:              ($screen-lg-min - 1) !default;
-	$screen-lg-max:              ($screen-xl-min - 1) !default;
-	$screen-xl-max:              ($screen-xxl-min - 1) !default;
+$screen-sm:                  576px !default;
+$screen-sm-min:              $screen-sm !default;
+
+$screen-md:                  768px !default;
+$screen-md-min:              $screen-md !default;
+
+$screen-lg:                  992px !default;
+$screen-lg-min:              $screen-lg !default;
+
+$screen-xl:                  1200px !default;
+$screen-xl-min:              $screen-lg !default;
 
 
-	$font-sans-serif:'Metrisch', sans-serif;
-	$font-serif:'Noto Serif', serif;
-	
-	$font-special:"Metrisch";
+$screen-xxl:                 1920px;
+$screen-xxl-min:              $screen-xl !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+$screen-lg-max:              ($screen-xl-min - 1) !default;
+$screen-xl-max:              ($screen-xxl-min - 1) !default;
+
+
+$font-sans-serif:'Metrisch', sans-serif;
+$font-serif:'Noto Serif', serif;
+
+$font-special:'Butler';
 
 /* ==========================================================================
 #Mixins
 ========================================================================== */
 
-	@mixin e($element){
+@mixin e($element){
 
-	  &__#{$element}{
-	    @content;
-	  }
-	}
+  &__#{$element}{
+    @content;
+  }
+}
 
-	@mixin m($modifier){
-	  &--#{$modifier}{
-	    @content;
-	  }
-	}
+@mixin m($modifier){
+  &--#{$modifier}{
+    @content;
+  }
+}
 
-	@function strip-unit($value) {
-	  @return $value / ($value * 0 + 1);
-	}
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
 
-	@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
-		$u1: unit($min-vw);
-		$u2: unit($max-vw);
-		$u3: unit($min-font-size);
-		$u4: unit($max-font-size);
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-font-size);
+	$u4: unit($max-font-size);
 
-		@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-			& {
-				font-size: $min-font-size;
-				@media screen and (min-width: $min-vw) {
-					font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-				}
-				@media screen and (min-width: $max-vw) {
-					font-size: $max-font-size;
-				}
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+		& {
+			font-size: $min-font-size;
+			@media screen and (min-width: $min-vw) {
+				font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+			}
+			@media screen and (min-width: $max-vw) {
+				font-size: $max-font-size;
 			}
 		}
 	}
+}
 
-	%padding-one{
-		padding:1rem;
-	}
+%padding-one{
+	padding:1rem;
+}
 
-	%padding-two{
-		padding:2rem 1rem;
-	}
+%padding-two{
+	padding:2rem 1rem;
+}
 
-	%padding-three{
-		padding:3rem 1rem;
-	}
+%padding-three{
+	padding:3rem 1rem;
+}
 
-	%padding-four{
-		padding:4rem 1rem;
-	}
+%padding-four{
+	padding:4rem 1rem;
+}
 
-	%padding-eight{
-		padding:8rem 1rem;
-	}
+%padding-eight{
+	padding:8rem 1rem;
+}
 
 /* ==========================================================================
 #Base
 ========================================================================== */
 
-	$min_width: 320px;
-	$max_width: 1200px;
-	$min_font: 14px;
-	$max_font: 16px;
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 14px;
+$max_font: 16px;
 
-	html {
-	  @include fluid-type($min_width, $max_width, $min_font, $max_font);
-	}
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
 
-	body{
-		line-height:1.5;
-	}
+body{
+	line-height:1.5;
+	background:$color1;
+	color:#fff;
+}
 
-	$mod_1: 1.2; // mobile
-	$mod_2: 1.408; // desktop
+$mod_1: 1.2; // mobile
+$mod_2: 1.408; // desktop
 
-	h1 {  
-	  font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem; 
-	  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
-	}
-	h2 {  
-	  font-size: $mod_1*$mod_1*$mod_1 *1rem; 
-	  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
-	}
-	h3 { 
-	  font-size: $mod_1*$mod_1 *1rem;
-	  @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
-	}
+h1 {  
+  font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem; 
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+h2 {  
+  font-size: $mod_1*$mod_1*$mod_1 *1rem; 
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+h3 { 
+  font-size: $mod_1*$mod_1 *1rem;
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+}
 
 
-	h1,h2,h3,h4,h5,h6{
-		line-height:1.5;
-		margin-bottom:.8rem;
-	}
+h1,h2,h3,h4,h5,h6{
+	line-height:1.5;
+	margin-bottom:.8rem;
+}
 
-	p, ul, ol, pre, table, blockquote {
-	  margin-top: 0rem;
-	  margin-bottom: 1.5rem;
-	}
-	ul ul, ol ol, ul ol, ol ul {
-	  margin-top: 0rem;
-	  margin-bottom: 0rem;
-	}
+p, ul, ol, pre, table, blockquote {
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+  font-size:1.2rem;
+}
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
 
-	/* Let's make sure all's aligned */
-	hr, .hr {
-	  border: 1px solid;
-	  margin: -1px 0;
-	}
-	a, b, i, strong, em, small, code {
-	  line-height: 0;
-	}
-	sub, sup {
-	  line-height: 0;
-	  position: relative;
-	  vertical-align: baseline;
-	}
-	sup {
-	  top: -0.5em;
-	}
-	sub {
-	  bottom: -0.25em;
-	}
+/* Let's make sure all's aligned */
+hr, .hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+a, b, i, strong, em, small, code {
+  line-height: 0;
+}
+sub, sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
 
+
+.btn{
+	background:#D85454;
+	color:#fff;
+	padding:1rem 2rem;
+	transition:all .4s ease-in-out;
+
+	&:hover{
+		color:#fff;
+		background-color:darken(#D85454, 5%);
+	}
+}
 
 /* ==========================================================================
 #Modules
 ========================================================================== */
+
+.main-logo{
+	width:4rem;
+	margin:0 auto;
+}
+
+.header{
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero{
+	min-height:100vh;
+	background:url('../../images/hero.jpg') no-repeat center;
+	background-size:cover;
+	padding:2em;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+
+	@include e('col'){
+		text-align:center;
+	}
+
+	@include e('header'){
+		font-family:$font-special;
+		color:#fff;
+		font-size:4rem;
+		line-height:1;
+		font-weight:300;
+	}
+
+	@include e('subheader'){
+		font-family:$font-special;
+		color:#fff;
+		font-size:2rem;
+		line-height:.5;
+		font-weight:300;
+		margin-bottom:4rem;
+	}
+
+	p{
+		font-family:$font-special;
+		font-weight:300;
+	}
+}
+
+.extra{
+	min-height:100vh;
+	background:$color1;
+}

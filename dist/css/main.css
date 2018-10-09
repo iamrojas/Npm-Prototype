@@ -6315,6 +6315,18 @@ a.text-dark:hover, a.text-dark:focus {
 /* ==========================================================================
 #Fonts
 ========================================================================== */
+@font-face {
+  font-family: 'Butler';
+  src: url("../../fonts/Butler-Medium.woff2") format("woff2"), url("../../fonts/Butler-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Butler';
+  src: url("../../fonts/Butler-Light.woff2") format("woff2"), url("../../fonts/Butler-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
 /* ==========================================================================
 #Variables
  ========================================================================== */
@@ -6334,7 +6346,9 @@ html {
       font-size: 16px; } }
 
 body {
-  line-height: 1.5; }
+  line-height: 1.5;
+  background: #153243;
+  color: #fff; }
 
 h1 {
   font-size: 2.0736rem; }
@@ -6375,7 +6389,8 @@ h1, h2, h3, h4, h5, h6 {
 
 p, ul, ol, pre, table, blockquote {
   margin-top: 0rem;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem; }
 
 ul ul, ol ol, ul ol, ol ul {
   margin-top: 0rem;
@@ -6401,6 +6416,57 @@ sup {
 sub {
   bottom: -0.25em; }
 
+.btn {
+  background: #D85454;
+  color: #fff;
+  padding: 1rem 2rem;
+  transition: all .4s ease-in-out; }
+  .btn:hover {
+    color: #fff;
+    background-color: #d33f3f; }
+
 /* ==========================================================================
 #Modules
 ========================================================================== */
+.main-logo {
+  width: 4rem;
+  margin: 0 auto; }
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 2rem; }
+
+.hero {
+  min-height: 100vh;
+  background: url("../../images/hero.jpg") no-repeat center;
+  background-size: cover;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .hero__col {
+    text-align: center; }
+  .hero__header {
+    font-family: "Butler";
+    color: #fff;
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 300; }
+  .hero__subheader {
+    font-family: "Butler";
+    color: #fff;
+    font-size: 2rem;
+    line-height: .5;
+    font-weight: 300;
+    margin-bottom: 4rem; }
+  .hero p {
+    font-family: "Butler";
+    font-weight: 300; }
+
+.extra {
+  min-height: 100vh;
+  background: #153243; }
