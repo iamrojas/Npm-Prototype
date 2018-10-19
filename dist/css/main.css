@@ -6385,7 +6385,9 @@ h3 {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.5;
-  margin-bottom: .8rem; }
+  margin-bottom: .8rem;
+  font-family: "Butler";
+  font-weight: 300; }
 
 p, ul, ol, pre, table, blockquote {
   margin-top: 0rem;
@@ -6417,10 +6419,11 @@ sub {
   bottom: -0.25em; }
 
 .btn {
-  background: #D85454;
+  background: #ff525e;
   color: #fff;
   padding: 1rem 2rem;
-  transition: all .4s ease-in-out; }
+  transition: all .4s ease-in-out;
+  border-radius: 0; }
   .btn:hover {
     color: #fff;
     background-color: #d33f3f; }
@@ -6465,8 +6468,31 @@ sub {
     margin-bottom: 4rem; }
   .hero p {
     font-family: "Butler";
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
     font-weight: 300; }
 
 .extra {
   min-height: 100vh;
   background: #153243; }
+
+.work {
+  padding: 4rem; }
+  .work__item img {
+    max-width: 100%; }
+  .work__title {
+    line-height: 8rem;
+    margin-bottom: 4rem;
+    position: relative; }
+    .work__title:after {
+      content: " ";
+      background: #fff;
+      height: .25rem;
+      width: 50%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0; }
+  @media (min-width: 768px) {
+    .work {
+      padding: 12rem; } }

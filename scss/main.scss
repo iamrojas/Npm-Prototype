@@ -29,7 +29,7 @@ $icon-font-path: '../../fonts/';
  ========================================================================== */
 
 $color1: #153243; //Dark blue
-$color2: #C31F26;//red
+$color2: #ff525e;//red
 $color3: #A7A2A9; //grey
 $color4: #F4F7F5; //off white
 $color5:#08090A; //black
@@ -180,6 +180,8 @@ h3 {
 h1,h2,h3,h4,h5,h6{
 	line-height:1.5;
 	margin-bottom:.8rem;
+	font-family:$font-special;
+	font-weight:300;
 }
 
 p, ul, ol, pre, table, blockquote {
@@ -214,10 +216,11 @@ sub {
 
 
 .btn{
-	background:#D85454;
+	background:#ff525e;
 	color:#fff;
 	padding:1rem 2rem;
 	transition:all .4s ease-in-out;
+	border-radius:0;
 
 	&:hover{
 		color:#fff;
@@ -275,6 +278,8 @@ sub {
 
 	p{
 		font-family:$font-special;
+		font-size:1.5rem;
+		margin-bottom:3rem;
 		font-weight:300;
 	}
 }
@@ -282,4 +287,35 @@ sub {
 .extra{
 	min-height:100vh;
 	background:$color1;
+}
+
+.work{
+	padding:4rem;
+
+	@include e('item'){
+		img{
+			max-width:100%;
+		}
+	}
+
+	@include e('title'){
+		line-height:8rem;
+		margin-bottom:4rem;
+		position:relative;
+
+		&:after{
+			content: " ";
+			background:#fff;
+			height: .25rem;
+			width:50%;
+			position:absolute;
+			bottom:0;
+			left:0;
+			right:0;
+		}
+	}
+
+	@media(min-width:$screen-md){
+		padding:12rem;
+	}
 }
