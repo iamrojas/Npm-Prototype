@@ -334,10 +334,12 @@ img {
 		height: .15rem;
 		position: relative;
 		vertical-align: middle;
-		width: 50%;
+		width: 40%;
 		margin-bottom: .15em;
 	}
 }
+
+
 
 /* ==========================================================================
 #Modules
@@ -583,6 +585,11 @@ img {
 	margin-top: 0;
 	background: #fff;
 	@extend .elevation-6dp;
+	display: none;
+
+	@media(min-width: $screen-md) {
+		display: block;
+	}	
 
 	@media(min-width: $screen-xl) {
 		padding: 4rem;
@@ -628,9 +635,10 @@ img {
 }
 
 .about__img{
-	max-width: 15rem;
+	display: none;
 
 	@media(min-width:$screen-lg) {
+		display: block;
 		max-width: 100%;
 	}
 }
@@ -658,6 +666,7 @@ img {
 }
 
 .amenities__content.column{
+	padding-left: 4rem;
 
 	@media(max-width: $screen-md-max){
 		background: #fff;
@@ -677,6 +686,16 @@ img {
 }
 
 .amenities__photo{
+	display: none;
+	margin-left: 8rem;
+
+	img{
+		max-width: 600px;
+	}
+
+	@media(min-width:$screen-sm) {
+		display: block;
+	}
 
 	@media(min-width:$screen-lg) {
 		margin-top: -15rem;
@@ -685,6 +704,30 @@ img {
 	@media(min-width:$screen-xl) {
 		margin-top: -22rem;
 	}
+}
+
+h3.features__header{
+	background: #000;
+	color: $contrastText;
+	padding: 1rem 2rem;
+	font-size:1.2rem;
+}
+
+.features{
+	padding: 4rem;
+}
+
+.features__column ul{
+	padding-left: 2rem;
+	list-style: square;
+
+	li{
+		line-height: 2rem;
+	}
+}
+
+.main-footer{
+	color: $contrastText;
 }
 
 /* ==========================================================================

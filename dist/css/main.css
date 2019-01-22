@@ -164,7 +164,7 @@ img {
     height: .15rem;
     position: relative;
     vertical-align: middle;
-    width: 50%;
+    width: 40%;
     margin-bottom: .15em; }
 
 /* ==========================================================================
@@ -358,7 +358,11 @@ img {
   text-align: center;
   padding: 2rem;
   margin-top: 0;
-  background: #fff; }
+  background: #fff;
+  display: none; }
+  @media (min-width: 768px) {
+    .intro {
+      display: block; } }
   @media (min-width: 1200px) {
     .intro {
       padding: 4rem; } }
@@ -394,9 +398,10 @@ img {
       margin-top: 8rem; } }
 
 .about__img {
-  max-width: 15rem; }
+  display: none; }
   @media (min-width: 992px) {
     .about__img {
+      display: block;
       max-width: 100%; } }
 
 .about__desc {
@@ -418,27 +423,53 @@ img {
   right: 0;
   background: rgba(241, 241, 241, 0.619608); }
 
-@media (max-width: 991px) {
-  .amenities__content.column {
-    background: #fff;
-    padding: 8rem 2rem; } }
-
-@media (min-width: 1200px) {
-  .amenities__content.column {
-    margin-left: 16.66667%; } }
+.amenities__content.column {
+  padding-left: 4rem; }
+  @media (max-width: 991px) {
+    .amenities__content.column {
+      background: #fff;
+      padding: 8rem 2rem; } }
+  @media (min-width: 1200px) {
+    .amenities__content.column {
+      margin-left: 16.66667%; } }
 
 @media (min-width: 992px) {
   .amenities.container {
     margin-top: 8rem;
     margin-bottom: 8rem; } }
 
-@media (min-width: 992px) {
-  .amenities__photo {
-    margin-top: -15rem; } }
+.amenities__photo {
+  display: none;
+  margin-left: 8rem; }
+  .amenities__photo img {
+    max-width: 600px; }
+  @media (min-width: 576px) {
+    .amenities__photo {
+      display: block; } }
+  @media (min-width: 992px) {
+    .amenities__photo {
+      margin-top: -15rem; } }
+  @media (min-width: 1200px) {
+    .amenities__photo {
+      margin-top: -22rem; } }
 
-@media (min-width: 1200px) {
-  .amenities__photo {
-    margin-top: -22rem; } }
+h3.features__header {
+  background: #000;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  font-size: 1.2rem; }
+
+.features {
+  padding: 4rem; }
+
+.features__column ul {
+  padding-left: 2rem;
+  list-style: square; }
+  .features__column ul li {
+    line-height: 2rem; }
+
+.main-footer {
+  color: #ffffff; }
 
 /* ==========================================================================
 #Theme Colors
