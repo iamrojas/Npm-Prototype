@@ -71,7 +71,8 @@ $font-sans-serif: century-gothic,
 sans-serif;
 $font-serif: 'Noto Serif',
 serif;
-$font-special: ivyjournal, sans-serif;
+$font-special: ivyjournal,
+sans-serif;
 
 /* ==========================================================================
 #Mixins
@@ -149,27 +150,24 @@ html {
 
 html body {
 	line-height: 1.5;
+	background: url('/images/country-quilt2.jpg');
 	font-family: $font-sans-serif;
+	color: #333;
 }
 
 $mod_1: 1.2; // mobile
 $mod_2: 1.408; // desktop
 
-h1 {
-	font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
-	@include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
-}
+.main-body{
+	h3 {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
 
-h2 {
-	font-size: $mod_1*$mod_1*$mod_1 *1rem;
-	@include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+		@media(min-width:$screen-md){
+			font-size: 2rem;
+		}
+	}
 }
-
-h3 {
-	font-size: $mod_1*$mod_1 *1rem;
-	@include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
-}
-
 
 h1,
 h2,
@@ -198,6 +196,30 @@ ul ol,
 ol ul {
 	margin-top: 0rem;
 	margin-bottom: 0rem;
+}
+
+.elevation-2dp {
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.elevation-3dp {
+	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
+}
+
+.elevation-4dp {
+	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+}
+
+.elevation-6dp {
+	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+}
+
+.elevation-8dp {
+	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+}
+
+.elevation-16dp {
+	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
 }
 
 /* Let's make sure all's aligned */
@@ -293,35 +315,59 @@ html a {
 	}
 }
 
+img {
+	width: 100%;
+	max-width: 100%;
+}
+
+.bar__title{
+	position: relative;
+
+	span{
+		margin-right: 1rem;
+	}
+
+	&:after{
+		border-top: .25rem solid $color2;;
+		content: "";
+		display: inline-block;
+		height: .15rem;
+		position: relative;
+		vertical-align: middle;
+		width: 50%;
+		margin-bottom: .15em;
+	}
+}
+
 /* ==========================================================================
 #Modules
 ========================================================================== */
 
-.header#main-header{
+.header#main-header {
 	height: 3rem;
 }
 
-.header .navbar-logo{
+.header .navbar-logo {
 	background: #fff;
 	padding: 1rem;
 
-	@media(min-width:$screen-lg){
+	@media(min-width: $screen-lg) {
 		padding: 2rem;
 	}
 }
 
-.header .navbar-brand{
-	align-self:	flex-start;
+.header .navbar-brand {
+	align-self: flex-start;
 }
 
 .header .navbar-burger {
 	color: #fff;
 }
 
-.header .navbar-logo img{
+.header .navbar-logo img {
 	max-width: 6rem;
 
-	@media(min-width:$screen-md){
+	@media(min-width: $screen-md) {
 		max-width: 8rem;
 	}
 }
@@ -375,11 +421,11 @@ html a {
 	}
 }
 
-.navbar-phone{
+.navbar-phone {
 	display: none;
 	padding: 2rem;
 
-	@media(min-width:$screen-lg){
+	@media(min-width: $screen-lg) {
 		display: block;
 	}
 }
@@ -424,7 +470,7 @@ html a {
 	}
 }
 
-.hero{
+.hero {
 	min-height: 38rem;
 	height: calc(100vh - 3rem);
 	background: url("/images/hero.jpg") no-repeat center;
@@ -432,56 +478,56 @@ html a {
 	position: relative;
 }
 
-.hero-call{
-	background: rgba(49,47,47, .9);
+.hero-call {
+	background: rgba(49, 47, 47, .9);
 	padding: 2rem;
 	display: flex;
-    align-items: center;
+	align-items: center;
 	justify-content: center;
 	position: absolute;
-    bottom: 0;
+	bottom: 0;
 
-	@media(min-width:$screen-lg){
+	@media(min-width: $screen-lg) {
 		position: relative;
 		height: 100vh;
 		width: 40%;
 	}
 
-	@media(min-width:$screen-xxl){
+	@media(min-width:$screen-xxl) {
 		padding: 0 4rem 0 8rem;
 	}
 }
 
-.hero-call__title{
+.hero-call__title {
 	font-size: 1.5rem;
 	margin-bottom: 2rem;
 
-	@media(min-width:$screen-xxl){
+	@media(min-width: $screen-xxl) {
 		margin-bottom: 4rem;
 		font-size: 2vw;
 	}
 }
 
-.hero-call__subtitle{
+.hero-call__subtitle {
 	font-family: $font-sans-serif;
 	font-size: 1rem;
 	opacity: .5;
 
-	@media(min-width:$screen-xxl){
+	@media(min-width: $screen-xxl) {
 		font-size: 1.5rem;
 	}
 }
 
-.hero__desc{
+.hero__desc {
 	font-size: .8rem;
 	margin-bottom: 2rem;
 
-	@media(min-width:$screen-lg){
+	@media(min-width: $screen-lg) {
 		font-size: 1rem;
 	}
 }
 
-.hero__link{
+.hero__link {
 	font-size: .8rem;
 	position: relative;
 	display: inline-block;
@@ -506,17 +552,16 @@ html a {
 		opacity: 1;
 	}
 
-	@media(min-width:$screen-lg){
+	@media(min-width:$screen-lg) {
 		font-size: 1.25rem;
 	}
 }
 
-.special-bar{
-
-	@media(min-width:$screen-lg){
+.special-bar {
+	@media(min-width: $screen-lg) {
 		width: 4rem;
 		height: 100vh;
-		background:  #eee;
+		background: #eee;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -526,39 +571,140 @@ html a {
 	}
 }
 
-.main-footer{
+.main-footer {
 	background: #000;
 	padding-top: 4rem;
 	padding-bottom: 4rem;
 }
 
-.intro{
+.intro {
 	text-align: center;
-	padding: .5rem;
+	padding: 2rem;
+	margin-top: 0;
+	background: #fff;
+	@extend .elevation-6dp;
+
+	@media(min-width: $screen-xl) {
+		padding: 4rem;
+	}
+
+	@media(min-width: $screen-xl) {
+		margin-top: -6rem;
+	}
 }
 
-.intro__title{
+.intro__title {
 	color: #333;
-	font-size: 2rem;
+	font-size: 1rem;
+	display: inline-block;
+	position: relative;
+	padding-bottom: 1rem;
+
+	&:after {
+		content: " ";
+		height: .25rem;
+		width: 110%;
+		left: -5%;
+		position: absolute;
+		background: $color2;
+		bottom: 0;
+	}
+
+	@media(min-width:$screen-xl) {
+		font-size: 2rem;
+	}
+
+	@media(min-width:$screen-xxl) {
+		font-size: 1.5vw;
+	}
+}
+
+.about__container.container{
+	margin-top: 0;
+	
+	@media(min-width:$screen-xl) {
+		margin-top: 8rem;
+	}
+}
+
+.about__img{
+	max-width: 15rem;
+
+	@media(min-width:$screen-lg) {
+		max-width: 100%;
+	}
+}
+.about__desc{
+	border-left: .5em solid $color2;
+	padding: 1rem 2rem;
+	padding-bottom: 4rem;
+}
+
+.about__title{
+	margin-bottom: 2rem;
+}
+
+.about__col{
+	text-align: center;
+}
+
+.divider{
+	height: 2rem;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	background: rgba(241, 241, 241, 0.6196078431372549);
+}
+
+.amenities__content.column{
+
+	@media(max-width: $screen-md-max){
+		background: #fff;
+		padding: 8rem 2rem;
+	}
+
+	@media(min-width: $screen-xl){
+		margin-left: 16.66667%;
+	}
+}
+
+.amenities.container{
+	@media(min-width:$screen-lg) {
+		margin-top: 8rem;
+		margin-bottom: 8rem;
+	}
+}
+
+.amenities__photo{
+
+	@media(min-width:$screen-lg) {
+		margin-top: -15rem;
+	}
+
+	@media(min-width:$screen-xl) {
+		margin-top: -22rem;
+	}
 }
 
 /* ==========================================================================
 #Theme Colors
 ========================================================================== */
 
-body {
-	
+
+.hero-wrap {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p
+		{
+		color: $contrastText;
+	}
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-	color: $contrastText;
-}
 
 .arrow-container i {
 	color: #333;

@@ -21,40 +21,16 @@ html {
 
 html body {
   line-height: 1.5;
-  font-family: century-gothic, sans-serif; }
+  background: url("/images/country-quilt2.jpg");
+  font-family: century-gothic, sans-serif;
+  color: #333; }
 
-h1 {
-  font-size: 2.0736rem; }
-  h1 {
-    font-size: 24.192px; }
-    @media screen and (min-width: 320px) {
-      h1 {
-        font-size: calc(24.192px + 14.88633 * ((100vw - 320px) / 880)); } }
-    @media screen and (min-width: 1200px) {
-      h1 {
-        font-size: 39.07833px; } }
-
-h2 {
-  font-size: 1.728rem; }
-  h2 {
-    font-size: 24.192px; }
-    @media screen and (min-width: 320px) {
-      h2 {
-        font-size: calc(24.192px + 14.88633 * ((100vw - 320px) / 880)); } }
-    @media screen and (min-width: 1200px) {
-      h2 {
-        font-size: 39.07833px; } }
-
-h3 {
-  font-size: 1.44rem; }
-  h3 {
-    font-size: 20.16px; }
-    @media screen and (min-width: 320px) {
-      h3 {
-        font-size: calc(20.16px + 7.5945 * ((100vw - 320px) / 880)); } }
-    @media screen and (min-width: 1200px) {
-      h3 {
-        font-size: 27.7545px; } }
+.main-body h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem; }
+  @media (min-width: 768px) {
+    .main-body h3 {
+      font-size: 2rem; } }
 
 h1,
 h2,
@@ -81,6 +57,24 @@ ul ol,
 ol ul {
   margin-top: 0rem;
   margin-bottom: 0rem; }
+
+.elevation-2dp {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+
+.elevation-3dp {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12); }
+
+.elevation-4dp {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
+
+.elevation-6dp, .intro {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2); }
+
+.elevation-8dp {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2); }
+
+.elevation-16dp {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2); }
 
 /* Let's make sure all's aligned */
 hr,
@@ -154,6 +148,24 @@ html a {
   color: #fff; }
   html a:hover, html a:visited, html a:active {
     color: #fff; }
+
+img {
+  width: 100%;
+  max-width: 100%; }
+
+.bar__title {
+  position: relative; }
+  .bar__title span {
+    margin-right: 1rem; }
+  .bar__title:after {
+    border-top: 0.25rem solid #CDAA72;
+    content: "";
+    display: inline-block;
+    height: .15rem;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+    margin-bottom: .15em; }
 
 /* ==========================================================================
 #Modules
@@ -344,22 +356,100 @@ html a {
 
 .intro {
   text-align: center;
-  padding: .5rem; }
+  padding: 2rem;
+  margin-top: 0;
+  background: #fff; }
+  @media (min-width: 1200px) {
+    .intro {
+      padding: 4rem; } }
+  @media (min-width: 1200px) {
+    .intro {
+      margin-top: -6rem; } }
 
 .intro__title {
   color: #333;
-  font-size: 2rem; }
+  font-size: 1rem;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 1rem; }
+  .intro__title:after {
+    content: " ";
+    height: .25rem;
+    width: 110%;
+    left: -5%;
+    position: absolute;
+    background: #CDAA72;
+    bottom: 0; }
+  @media (min-width: 1200px) {
+    .intro__title {
+      font-size: 2rem; } }
+  @media (min-width: 1920px) {
+    .intro__title {
+      font-size: 1.5vw; } }
+
+.about__container.container {
+  margin-top: 0; }
+  @media (min-width: 1200px) {
+    .about__container.container {
+      margin-top: 8rem; } }
+
+.about__img {
+  max-width: 15rem; }
+  @media (min-width: 992px) {
+    .about__img {
+      max-width: 100%; } }
+
+.about__desc {
+  border-left: 0.5em solid #CDAA72;
+  padding: 1rem 2rem;
+  padding-bottom: 4rem; }
+
+.about__title {
+  margin-bottom: 2rem; }
+
+.about__col {
+  text-align: center; }
+
+.divider {
+  height: 2rem;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: rgba(241, 241, 241, 0.619608); }
+
+@media (max-width: 991px) {
+  .amenities__content.column {
+    background: #fff;
+    padding: 8rem 2rem; } }
+
+@media (min-width: 1200px) {
+  .amenities__content.column {
+    margin-left: 16.66667%; } }
+
+@media (min-width: 992px) {
+  .amenities.container {
+    margin-top: 8rem;
+    margin-bottom: 8rem; } }
+
+@media (min-width: 992px) {
+  .amenities__photo {
+    margin-top: -15rem; } }
+
+@media (min-width: 1200px) {
+  .amenities__photo {
+    margin-top: -22rem; } }
 
 /* ==========================================================================
 #Theme Colors
 ========================================================================== */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+.hero-wrap h1,
+.hero-wrap h2,
+.hero-wrap h3,
+.hero-wrap h4,
+.hero-wrap h5,
+.hero-wrap h6,
+.hero-wrap p {
   color: #ffffff; }
 
 .arrow-container i {
