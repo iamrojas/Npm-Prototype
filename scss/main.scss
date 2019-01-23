@@ -347,6 +347,11 @@ img {
 
 .header#main-header {
 	height: 3rem;
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+	left: 0;
+	right: 0;
 }
 
 .header .navbar-logo {
@@ -376,6 +381,12 @@ img {
 
 .header .navbar-menu {
 	justify-content: center;
+
+	@media(max-width:$screen-md-max){
+		background: #000;
+		height: 100vh;
+		padding: 0;
+	}
 }
 
 .header .navbar-link.is-active,
@@ -474,7 +485,7 @@ img {
 
 .hero {
 	min-height: 38rem;
-	height: calc(100vh - 3rem);
+	height: 100vh;
 	background: url("/images/hero.jpg") no-repeat center;
 	background-size: cover;
 	position: relative;
@@ -586,8 +597,8 @@ img {
 	background: #fff;
 	@extend .elevation-6dp;
 	display: none;
-
-	@media(min-width: $screen-md) {
+	
+	@media(min-width: $screen-lg) {
 		display: block;
 	}	
 
@@ -670,10 +681,11 @@ img {
 
 	@media(max-width: $screen-md-max){
 		background: #fff;
-		padding: 8rem 2rem;
+		padding: 4rem 2rem;
+		width: 100% !important;
 	}
 
-	@media(min-width: $screen-xl){
+	@media(min-width: $screen-xxl){
 		margin-left: 16.66667%;
 	}
 }
@@ -681,13 +693,12 @@ img {
 .amenities.container{
 	@media(min-width:$screen-lg) {
 		margin-top: 8rem;
-		margin-bottom: 8rem;
+		margin-bottom: 2rem;
 	}
 }
 
 .amenities__photo{
 	display: none;
-	margin-left: 8rem;
 
 	img{
 		max-width: 600px;
@@ -699,6 +710,7 @@ img {
 
 	@media(min-width:$screen-lg) {
 		margin-top: -15rem;
+		margin-left: 8rem;
 	}
 
 	@media(min-width:$screen-xl) {
@@ -714,7 +726,9 @@ h3.features__header{
 }
 
 .features{
-	padding: 4rem;
+	@media(min-width:$screen-lg) {
+		padding: 4rem;
+	}
 }
 
 .features__column ul{

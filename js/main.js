@@ -22,7 +22,7 @@
                     })
                 },
                 context: context,
-                offset: 1500
+                offset: -50
             });
         }
 
@@ -42,15 +42,15 @@
                     })
                 },
                 context: context,
-                offset: 1500
+                offset: -500
             });
         }
     }
 
     //Initialize the animations
 
-    // const heroAnimation= new Animation('.hero');
-    // heroAnimation.fadeLeft([".hero__headline" , ".hero__button"]);
+    const heroAnimation = new Animation('.intro');
+    heroAnimation.fadeDown(".intro");
 
     
     //Owl Carousel Options

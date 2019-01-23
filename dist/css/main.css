@@ -171,7 +171,12 @@ img {
 #Modules
 ========================================================================== */
 .header#main-header {
-  height: 3rem; }
+  height: 3rem;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  left: 0;
+  right: 0; }
 
 .header .navbar-logo {
   background: #fff;
@@ -194,6 +199,11 @@ img {
 
 .header .navbar-menu {
   justify-content: center; }
+  @media (max-width: 991px) {
+    .header .navbar-menu {
+      background: #000;
+      height: 100vh;
+      padding: 0; } }
 
 .header .navbar-link.is-active,
 .header .navbar-link:hover,
@@ -269,7 +279,7 @@ img {
 
 .hero {
   min-height: 38rem;
-  height: calc(100vh - 3rem);
+  height: 100vh;
   background: url("/images/hero.jpg") no-repeat center;
   background-size: cover;
   position: relative; }
@@ -360,7 +370,7 @@ img {
   margin-top: 0;
   background: #fff;
   display: none; }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     .intro {
       display: block; } }
   @media (min-width: 1200px) {
@@ -428,19 +438,19 @@ img {
   @media (max-width: 991px) {
     .amenities__content.column {
       background: #fff;
-      padding: 8rem 2rem; } }
-  @media (min-width: 1200px) {
+      padding: 4rem 2rem;
+      width: 100% !important; } }
+  @media (min-width: 1920px) {
     .amenities__content.column {
       margin-left: 16.66667%; } }
 
 @media (min-width: 992px) {
   .amenities.container {
     margin-top: 8rem;
-    margin-bottom: 8rem; } }
+    margin-bottom: 2rem; } }
 
 .amenities__photo {
-  display: none;
-  margin-left: 8rem; }
+  display: none; }
   .amenities__photo img {
     max-width: 600px; }
   @media (min-width: 576px) {
@@ -448,7 +458,8 @@ img {
       display: block; } }
   @media (min-width: 992px) {
     .amenities__photo {
-      margin-top: -15rem; } }
+      margin-top: -15rem;
+      margin-left: 8rem; } }
   @media (min-width: 1200px) {
     .amenities__photo {
       margin-top: -22rem; } }
@@ -459,8 +470,9 @@ h3.features__header {
   padding: 1rem 2rem;
   font-size: 1.2rem; }
 
-.features {
-  padding: 4rem; }
+@media (min-width: 992px) {
+  .features {
+    padding: 4rem; } }
 
 .features__column ul {
   padding-left: 2rem;
