@@ -20,7 +20,7 @@
 	<header id="main-header" class="header">
 		<nav class="navbar" role="navigation" aria-label="main navigation">
 			<div class="navbar-brand">
-				<a class="navbar-logo" href="">
+				<a class="navbar-logo" href="#top">
 					<img src="images/main-logo.svg" alt="Main Logo">
 				</a>
 				<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
@@ -48,29 +48,36 @@
 	</header>
 
 	<section id="main-hero" class="hero">
+		<div id="top" class="anchor"></div>
 		<div class="hero-call">
 			<div class="hero-wrap">
 				<h2 class="hero-call__subtitle">Cras quis nulla commodo, aliquam</h2>
 				<h1 class="hero-call__title">Sleek and Modern Living</h1>
 
-				<p class="hero__desc">  elit. Vero, porro obcaecati laboriosam in velit autem nemo
+				<p class="hero__desc"> elit. Vero, porro obcaecati laboriosam in velit autem nemo
 					perferendis! Est,
 					earum eveniet voluptas ut labore incidunt sit necessitatibus. Architecto cupiditate ullam sequi?
 				</p>
 
-				<a class="hero__link" href="">See Our Floorplans</a>
+				<a href="#floorplans" class="hero__link" href="">See Our Floorplans</a>
 			</div>
 		</div>
+		<!-- <div class="hero-arrow">
+			<a class="to-content" href="#content">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" class="arrow">
+					<path d="M121.3 34.6c-1.6-1.6-4.2-1.6-5.8 0l-51 51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8l53.9 53.9c.8.8 1.8 1.2 2.9 1.2 1 0 2.1-.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2.1-5.8z" /></svg>
+			</a>
+		</div> -->
 	</section>
 
-	<main class="main-content">
+	<main id="main-content" class="main-content">
 		<div class="container">
-			<div class="intro">
+			<div id="intro" class="intro">
 				<h2 class="intro__title">Welcome To Your New Home</h2>
 			</div>
 		</div>
-		<div class="container about__container">
-			<div class="columns about is-desktop">
+		<div id="about__container" class="container about__container">
+			<div class="columns about">
 				<div class="column about__col is-4">
 					<img class="about__img" src="images/about.png" alt="main-about">
 				</div>
@@ -86,9 +93,10 @@
 			</div>
 		</div>
 		<div class="divider"></div>
-		<div class="container is-fluid amenities">
+		<div class="container amenities">
+			<div id="amenities" class="anchor"></div>
 			<div class="columns is-mobile">
-				<div class="column amenities__content is-6">
+				<div class="column amenities__content is-5">
 					<h3 class="amenities__title bar__title">
 						<span>Discover Our Amenities</span>
 					</h3>
@@ -104,100 +112,404 @@
 				</div>
 			</div>
 		</div>
-		<div class="columns features__wrapper">
-			<div class="column is-5">
-				<img src="images/amenities2.jpg" alt="">
-			</div>
-			<div class="column">
-				<div class="columns features">
-					<div class="column features__column">
-						<h3 class="features__header has-text-centered">Apartment Features</h3>
-						<ul>
-							<li>Polished Quartz Kitchen Countertops</li>
-							<li>Cultured Marble Vanity Tops w/Integral Sinks</li>
-							<li>Tile Backsplash in Kitchen</li>
-							<li>Stainless Steel Appliances</li>
-							<li>Undermount Faucets &amp; Sinks</li>
-							<li>LED lighting in Entries, Kitchens, Bathrooms, &amp; Closets</li>
-						</ul>
-					</div>
-					<div class="column features__column">
-						<h3 class="features__header has-text-centered">Community Features</h3>
-						<ul>
-							<li>Amenity Courtyard featuring Fire Pits, Bar, Lounge Areas, Grilling Station and Saltwater Pool w/ Large Wet
-								Deck</li>
-							<li>Sky Deck</li>
-							<li>Coffee Lounge</li>
-							<li>Conference Room</li>
-							<li>Pet Wash</li>
-							<li>Bike Storage &amp; Repair</li>
-							<li>Gaming &amp; Study Lounge</li>
-							<li>24-Hour Fitness Center featuring</li>
-							<li>Fitness onDemand®</li>
-							<li>Conference Room</li>
-							<li>Guest Suite</li>
-							<li>Concierge Services</li>
-							<li>Maintenance Concierge Services</li>
-						</ul>
+		<div class="container is-fluid">
+			<div class="columns features__wrapper is-desktop">
+				<div class="column is-5">
+					<img src="images/amenities2.jpg" alt="">
+				</div>
+				<div class="column">
+					<div class="columns features">
+						<div class="column features__column">
+							<h3 class="features__header has-text-centered">Apartment Features</h3>
+							<ul>
+								<li>Polished Quartz Kitchen Countertops</li>
+								<li>Cultured Marble Vanity Tops w/Integral Sinks</li>
+								<li>Tile Backsplash in Kitchen</li>
+								<li>Stainless Steel Appliances</li>
+								<li>Undermount Faucets &amp; Sinks</li>
+								<li>LED lighting in Entries, Kitchens, Bathrooms, &amp; Closets</li>
+							</ul>
+						</div>
+						<div class="column features__column">
+							<h3 class="features__header has-text-centered">Community Features</h3>
+							<ul>
+								<li>Amenity Courtyard featuring Fire Pits, Bar, Lounge Areas, Grilling Station and Saltwater Pool w/ Large Wet
+									Deck</li>
+								<li>Sky Deck</li>
+								<li>Coffee Lounge</li>
+								<li>Conference Room</li>
+								<li>Pet Wash</li>
+								<li>Bike Storage &amp; Repair</li>
+								<li>Gaming &amp; Study Lounge</li>
+								<li>24-Hour Fitness Center featuring</li>
+								<li>Fitness onDemand®</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="container is-fluid">
+
+		<div class="container">
+			<div id="floorplans" class="anchor"></div>
 			<div class="columns floorplans">
 				<div class="column is-5">
-						<h3 class="amenities__title bar__title">
-							<span>Explore Our Floor Plans</span>
+					<h3 class="amenities__title bar__title">
+						<span>Explore Our Floor Plans</span>
+					</h3>
+					<p class="amenities__desc">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus adipisci officiis nostrum modi, asperiores,
+						animi dolorem illo aspernatur hic ut rem dicta sed? Qui corrupti architecto illum aliquam sed fugiat.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus adipisci officiis nostrum modi, asperiores,
+						animi dolorem illo aspernatur hic ut rem dicta sed? Qui corrupti architecto illum aliquam sed fugiat.
+					</p>
+				</div>
+				<div class="column">
+					<img src="images/floorplan.jpg" alt="">
+				</div>
+			</div>
+			<div class="fp-tab">
+				<div class="columns">
+					<div class="tab-wrap">
+						<ul>
+							<li>
+								<a href="javascript:rudrSwitchTab('tb_1', 'content_1');" id="tb_1" class="tabmenu active">
+									<span class="big-number is-size-1">S</span><span>Studio</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:rudrSwitchTab('tb_2', 'content_2');" id="tb_2" class="tabmenu">
+									<span class="big-number is-size-1">1</span><span>Bedroom</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:rudrSwitchTab('tb_3', 'content_3');" id="tb_3" class="tabmenu">
+									<span class="big-number is-size-1">2</span><span>Bedroom</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:rudrSwitchTab('tb_4', 'content_4');" id="tb_4" class="tabmenu">
+									<span class="big-number is-size-1">3</span><span>Bedroom</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="fp-tab__container">
+				<div id="content_1" class="tabcontent">
+					<div class="fp-item">
+						<div class="fp-item__content">
+							<div class="wrap">
+								<h3 class="fp-item__title">Floor Plan Name</h3>
+								<ul class="details">
+									<li class="beds">
+										<strong>Beds</strong>
+										<span>Studio</span>
+									</li>
+									<li class="baths">
+										<strong>Baths</strong>
+										<span>1.0</span>
+									</li>
+									<li class="sqft">
+										<strong>Sqft</strong>
+										<span>512</span>
+									</li>
+									<li class="rent">
+										<strong>Starting Price</strong>
+										<span>Call for details</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="fp-item__img">
+							<img src="images/sample.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				<div id="content_2" class="tabcontent" style="display:none;">
+					<div class="fp-item">
+						<div class="fp-item__content">
+							<div class="wrap">
+								<h3 class="fp-item__title">Floor Plan Name</h3>
+								<ul class="details">
+									<li class="beds">
+										<strong>Beds</strong>
+										<span>Studio</span>
+									</li>
+									<li class="baths">
+										<strong>Baths</strong>
+										<span>1.0</span>
+									</li>
+									<li class="sqft">
+										<strong>Sqft</strong>
+										<span>512</span>
+									</li>
+									<li class="rent">
+										<strong>Starting Price</strong>
+										<span>Call for details</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="fp-item__img">
+							<img src="images/sample.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				<div id="content_3" class="tabcontent" style="display:none;">
+					<div class="fp-item">
+						<div class="fp-item__content">
+							<div class="wrap">
+								<h3 class="fp-item__title">Floor Plan 2</h3>
+								<ul class="details">
+									<li class="beds">
+										<strong>Beds</strong>
+										<span>Studio</span>
+									</li>
+									<li class="baths">
+										<strong>Baths</strong>
+										<span>1.0</span>
+									</li>
+									<li class="sqft">
+										<strong>Sqft</strong>
+										<span>512</span>
+									</li>
+									<li class="rent">
+										<strong>Starting Price</strong>
+										<span>Call for details</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="fp-item__img">
+							<img src="images/sample.jpg" alt="">
+						</div>
+					</div>
+					<div class="fp-item">
+						<div class="fp-item__content">
+							<div class="wrap">
+								<h3 class="fp-item__title">Floor Plan 2</h3>
+								<ul class="details">
+									<li class="beds">
+										<strong>Beds</strong>
+										<span>Studio</span>
+									</li>
+									<li class="baths">
+										<strong>Baths</strong>
+										<span>1.0</span>
+									</li>
+									<li class="sqft">
+										<strong>Sqft</strong>
+										<span>512</span>
+									</li>
+									<li class="rent">
+										<strong>Starting Price</strong>
+										<span>Call for details</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="fp-item__img">
+							<img src="images/sample.jpg" alt="">
+						</div>
+					</div>
+					<div class="fp-item">
+						<div class="fp-item__content">
+							<div class="wrap">
+								<h3 class="fp-item__title">Floor Plan 2</h3>
+								<ul class="details">
+									<li class="beds">
+										<strong>Beds</strong>
+										<span>Studio</span>
+									</li>
+									<li class="baths">
+										<strong>Baths</strong>
+										<span>1.0</span>
+									</li>
+									<li class="sqft">
+										<strong>Sqft</strong>
+										<span>512</span>
+									</li>
+									<li class="rent">
+										<strong>Starting Price</strong>
+										<span>Call for details</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="fp-item__img">
+							<img src="images/sample.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				<div id="content_4" class="tabcontent" style="display:none;">
+					<div class="fp-item">
+						<div class="fp-item__content">
+							<div class="wrap">
+								<h3 class="fp-item__title">Floor Plan 3</h3>
+								<ul class="details">
+									<li class="beds">
+										<strong>Beds</strong>
+										<span>Studio</span>
+									</li>
+									<li class="baths">
+										<strong>Baths</strong>
+										<span>1.0</span>
+									</li>
+									<li class="sqft">
+										<strong>Sqft</strong>
+										<span>512</span>
+									</li>
+									<li class="rent">
+										<strong>Starting Price</strong>
+										<span>Call for details</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="fp-item__img">
+							<img src="images/sample.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="gallery">
+			<div id="gallery" class="anchor"></div>
+			<div class="container">
+				<div class="columns">
+					<div class="column">
+						<h3 class="gallery__title bar__title">
+							<span>See Our Gallery</span>
 						</h3>
-						<p class="amenities__desc">
+						<p class="gallery__desc">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus adipisci officiis nostrum modi, asperiores,
 							animi dolorem illo aspernatur hic ut rem dicta sed? Qui corrupti architecto illum aliquam sed fugiat.
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus adipisci officiis nostrum modi, asperiores,
 							animi dolorem illo aspernatur hic ut rem dicta sed? Qui corrupti architecto illum aliquam sed fugiat.
 						</p>
+					</div>
 				</div>
-				<div class="column">
-					<img src="images/floorplan.jpg" alt="">
+			</div>
+			<div class="container-fluid">
+				<!-- $gallerymodule->render(); -->
+			</div>
+		</div>
+
+		<div class="neighborhood">
+			<div id="neighborhood" class="anchor"></div>
+			<div class="container">
+				<div class="columns">
+					<div class="column">
+						<h3 class="neighborhood__title bar__title">
+							<span>The Neighborhood</span>
+						</h3>
+						<p class="neighborhood__desc">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus adipisci officiis nostrum modi, asperiores,
+							animi dolorem illo aspernatur hic ut rem dicta sed? Qui corrupti architecto illum aliquam sed fugiat.
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus adipisci officiis nostrum modi, asperiores,
+							animi dolorem illo aspernatur hic ut rem dicta sed? Qui corrupti architecto illum aliquam sed fugiat.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<!-- $neighborhoodmodule->render(); -->
+			</div>
+		</div>
+
+		<div class="residents">
+			<div id="residents" class="anchor"></div>
+			<div class="container is-fluid">
+				<div class="columns">
+					<div class="resident__content column is-6">
+						<div class="wrap">
+							<h3 class="resident__title bar__title">
+								<span>Resident Services</span>
+							</h3>
+							<p class="resident__desc">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus adipisci officiis nostrum modi, asperiores,
+								animi dolorem illo aspernatur hic ut rem dicta sed? Qui corrupti architecto illum aliquam sed fugiat.
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus adipisci officiis nostrum modi, asperiores,
+								animi dolorem illo aspernatur hic ut rem dicta sed? Qui corrupti architecto illum aliquam sed fugiat.
+							</p>
+							<a href="" class="btn resident__btn">
+								Pay Rent
+							</a>
+							<a href="" class="btn resident__btn">
+								Resident Login
+							</a>
+						</div>
+					</div>
+					<div class="column is-6 resident__img">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid contact-container">
+			<div id="contact" class="anchor"></div>
+			<div class="columns">
+				<div class="column is-6">
+					<div class="contact-header">
+
+					</div>
+				</div>
+				<div class="contact__content column is-6">
+					<div class="wrap">
+						<h3 class="contact__title bar__title">
+							<span>Contact Us</span>
+						</h3>
+						<p class="contact__desc">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus adipisci officiis nostrum modi, asperiores,
+							animi dolorem illo aspernatur hic ut rem dicta sed? Qui corrupti architecto illum aliquam sed fugiat.
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus adipisci officiis nostrum modi, asperiores,
+							animi dolorem illo aspernatur hic ut rem dicta sed? Qui corrupti architecto illum aliquam sed fugiat.
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	</main>
 
 	<footer class="main-footer">
-		<div class="container">
-			<div class="columns">
-				<div class="column is-4 main-footer__column">
-					<div class="footer-content">
-						<h3>Now Leasing</h3> 
-						<p>4460 Corporation lane</p>
-						<p>Virginia</p>
+		<div class="footer-top">
+			<div class="container">
+				<div class="columns">
+					<div class="column is-4 main-footer__column has-text-centered">
+						<div class="footer-content">
+							<p>4460 Corporation lane</p>
+							<p>Virginia</p>
+						</div>
 					</div>
-					<div class="footer-content">
-						<h3>Office Hours</h3>
+					<div class="column is-4 main-footer__column has-text-centered">
+						<ul class="footer-menu">
+							<li class="footer-menu__item"><a href="" class="footer-menu__link">Home</a></li>
+							<li class="footer-menu__item"><a href="" class="footer-menu__link">Floor Plans</a></li>
+							<li class="footer-menu__item"><a href="" class="footer-menu__link">Gallery</a></li>
+							<li class="footer-menu__item"><a href="" class="footer-menu__link">Neighborhood</a></li>
+							<li class="footer-menu__item"><a href="" class="footer-menu__link">News</a></li>
+							<li class="footer-menu__item"><a href="" class="footer-menu__link">Contact</a></li>
+						</ul>
 					</div>
-					<div class="footer-content">
-						<h3>For More Information</h3>
-						<span>757-777-7777</span>
+					<div class="column is-4 main-footer__column has-text-centered">
+						Find Directions
 					</div>
 				</div>
-				<div class="column is-4 main-footer__column">
-					<ul class="footer-menu">
-						<li class="footer-menu__item"><a href="" class="footer-menu__link">Home</a></li>
-						<li class="footer-menu__item"><a href="" class="footer-menu__link">Floor Plans</a></li>
-						<li class="footer-menu__item"><a href="" class="footer-menu__link">Gallery</a></li>
-						<li class="footer-menu__item"><a href="" class="footer-menu__link">Neighborhood</a></li>
-						<li class="footer-menu__item"><a href="" class="footer-menu__link">News</a></li>
-						<li class="footer-menu__item"><a href="" class="footer-menu__link">Contact</a></li>
-					</ul>
-				</div>
-				<div class="column is-4 main-footer__column">
-					<a class="btn" href="">
-						Apply Now
-					</a>
-					<a class="btn" href="">
-						Book A Tour
-					</a>
-				</div>
+			</div>
+		</div>
+		<div class="footer-bot">
+			<div class="container">
+					<div class="columns">
+						<div class="column powered-by level-left">
+							Powered By Resite
+						</div>
+						<div class="column privacy level-right has-text-right">
+							<a href="">Privacy</a>
+						</div>
+					</div>
 			</div>
 		</div>
 	</footer>

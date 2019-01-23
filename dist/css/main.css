@@ -76,6 +76,12 @@ ol ul {
 .elevation-16dp {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2); }
 
+.anchor {
+  display: block;
+  position: relative;
+  top: -200px;
+  visibility: hidden; }
+
 /* Let's make sure all's aligned */
 hr,
 .hr {
@@ -176,7 +182,8 @@ img {
   z-index: 2;
   width: 100%;
   left: 0;
-  right: 0; }
+  right: 0;
+  z-index: 6; }
 
 .header .navbar-logo {
   background: #fff;
@@ -236,7 +243,7 @@ img {
   font-size: .8rem;
   transition: all .8s ease-in-out;
   color: #ffffff; }
-  @media (min-width: 992px) {
+  @media (min-width: 1200px) {
     .header .navbar-item {
       font-size: 1rem;
       padding: 2rem; } }
@@ -244,7 +251,7 @@ img {
 .navbar-phone {
   display: none;
   padding: 2rem; }
-  @media (min-width: 992px) {
+  @media (min-width: 1200px) {
     .navbar-phone {
       display: block; } }
 
@@ -360,23 +367,24 @@ img {
     align-content: center; } }
 
 .main-footer {
-  background: #000;
-  padding-top: 4rem;
-  padding-bottom: 4rem; }
+  background: #000; }
 
 .intro {
   text-align: center;
   padding: 2rem;
   margin-top: 0;
   background: #fff;
-  display: none; }
+  display: none;
+  opacity: 0;
+  background: url("/images/stone.jpg") no-repeat center;
+  background-size: cover; }
   @media (min-width: 992px) {
     .intro {
       display: block; } }
   @media (min-width: 1200px) {
     .intro {
       padding: 4rem; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     .intro {
       margin-top: -6rem; } }
 
@@ -394,12 +402,15 @@ img {
     position: absolute;
     background: #CDAA72;
     bottom: 0; }
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     .intro__title {
       font-size: 2rem; } }
   @media (min-width: 1920px) {
     .intro__title {
       font-size: 1.5vw; } }
+
+.about__col, .about__desc {
+  opacity: 0; }
 
 .about__container.container {
   margin-top: 0; }
@@ -409,7 +420,7 @@ img {
 
 .about__img {
   display: none; }
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     .about__img {
       display: block;
       max-width: 100%; } }
@@ -418,6 +429,9 @@ img {
   border-left: 0.5em solid #CDAA72;
   padding: 1rem 2rem;
   padding-bottom: 4rem; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .about__desc {
+      margin-top: 4rem; } }
 
 .about__title {
   margin-bottom: 2rem; }
@@ -433,6 +447,9 @@ img {
   right: 0;
   background: rgba(241, 241, 241, 0.619608); }
 
+.amenities__content, .amenities__photo {
+  opacity: 0; }
+
 .amenities__content.column {
   padding-left: 4rem; }
   @media (max-width: 991px) {
@@ -440,9 +457,6 @@ img {
       background: #fff;
       padding: 4rem 2rem;
       width: 100% !important; } }
-  @media (min-width: 1920px) {
-    .amenities__content.column {
-      margin-left: 16.66667%; } }
 
 @media (min-width: 992px) {
   .amenities.container {
@@ -464,24 +478,186 @@ img {
     .amenities__photo {
       margin-top: -22rem; } }
 
+.features {
+  background: url("/images/stone.jpg") no-repeat center;
+  background-size: cover;
+  padding: 4rem 0; }
+
 h3.features__header {
   background: #000;
   color: #ffffff;
   padding: 1rem 2rem;
   font-size: 1.2rem; }
 
-@media (min-width: 992px) {
-  .features {
-    padding: 4rem; } }
+.features__wrapper {
+  max-width: 1800px;
+  margin: 0 auto !important;
+  padding: 4rem 0; }
 
 .features__column ul {
   padding-left: 2rem;
   list-style: square; }
   .features__column ul li {
-    line-height: 2rem; }
+    line-height: 2rem;
+    font-size: .9rem; }
 
 .main-footer {
   color: #ffffff; }
+
+.hero-arrow {
+  position: absolute;
+  bottom: 8rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 7;
+  width: 50px;
+  z-index: 2; }
+
+.arrow path {
+  stroke: #fff;
+  fill: rgba(0, 0, 0, 0); }
+
+.fp-tab {
+  text-align: center;
+  padding: 2rem 4rem;
+  background: #fff;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000; }
+  .fp-tab .columns {
+    text-align: center;
+    align-items: center;
+    justify-content: center; }
+  .fp-tab ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+  .fp-tab .big-number {
+    margin-bottom: 3rem; }
+    @media (max-width: 991px) {
+      .fp-tab .big-number {
+        margin-bottom: 2rem;
+        font-size: 1.5rem !important; } }
+  .fp-tab li {
+    display: inline;
+    padding-left: 2rem;
+    padding-right: 2rem; }
+    @media (max-width: 991px) {
+      .fp-tab li {
+        flex-basis: 100%;
+        margin-bottom: 2rem;
+        font-size: .8rem; } }
+    .fp-tab li a {
+      padding: 2rem;
+      color: #333;
+      display: inline-block;
+      transition: all .4s ease-in-out;
+      overflow: hidden;
+      position: relative; }
+      .fp-tab li a::after {
+        content: " ";
+        height: 0.25rem;
+        width: 100%;
+        position: absolute;
+        background: #CDAA72;
+        bottom: 0;
+        left: 0;
+        display: block;
+        opacity: 0;
+        transform: translateY(2px);
+        transition: all .4s ease-in-out; }
+      .fp-tab li a:hover::after, .fp-tab li a.active::after {
+        transform: translateY(0);
+        opacity: 1; }
+      .fp-tab li a span {
+        display: block; }
+
+.fp-tab__container {
+  margin-top: 4rem; }
+
+.fp-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  border: 8px solid #d2a96a; }
+  .fp-item > div {
+    flex-basis: 100%; }
+    @media (min-width: 768px) {
+      .fp-item > div {
+        flex-basis: 50%; } }
+
+.fp-item__content {
+  background: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem; }
+  .fp-item__content strong {
+    color: #fff; }
+
+.gallery {
+  padding: 4rem 0; }
+
+.neighborhood {
+  background: url("/images/stone.jpg") no-repeat center;
+  background-size: cover;
+  padding: 4rem 0; }
+
+.resident__img {
+  min-height: 400px;
+  background: url("/images/resident.jpg") no-repeat center;
+  background-size: cover; }
+  @media (min-width: 1200px) {
+    .resident__img {
+      min-height: 15vw; } }
+  @media (min-width: 1920px) {
+    .resident__img {
+      min-height: 25vw; } }
+
+.resident__desc {
+  margin-bottom: 2rem; }
+
+.resident__content {
+  background: url("/images/wood-bg.jpg") no-repeat center;
+  background-size: cover;
+  position: relative; }
+  .resident__content .wrap {
+    position: relative;
+    z-index: 2; }
+  .resident__content:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: .9;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0; }
+
+@media (min-width: 768px) {
+  .resident__content.column {
+    padding: 4rem; } }
+
+.contact-header {
+  background: #333;
+  display: flex; }
+
+.contact-header {
+  min-height: 40vh;
+  background: url("/images/contact.jpg") no-repeat center;
+  background-size: cover; }
+
+.contact__content .wrap {
+  padding: 4rem; }
+
+.footer-top {
+  background: #333;
+  padding: 4rem 0; }
 
 /* ==========================================================================
 #Theme Colors
