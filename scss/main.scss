@@ -1,4 +1,3 @@
-
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 
 
@@ -7,201 +6,233 @@
 ========================================================================== */
 
 
-  $icon-font-path: '../../fonts/';
+$icon-font-path: '../../fonts/';
 
-  // @font-face {
-	 //  font-family: 'Metrisch';
-	 //  src: url($icon-font-path +  'Metrisch-ExtraLight-webfont.woff2') format('woff2'),
-		//    url($icon-font-path +  'Metrisch-ExtraLight-webfont.woff') format('woff');
-	 //  font-weight: normal;
-	 //  font-style: normal;
-  // }
+// @font-face {
+//  font-family: 'Metrisch';
+//  src: url($icon-font-path +  'Metrisch-ExtraLight-webfont.woff2') format('woff2'),
+//    url($icon-font-path +  'Metrisch-ExtraLight-webfont.woff') format('woff');
+//  font-weight: normal;
+//  font-style: normal;
+// }
 
 
 /* ==========================================================================
 #Variables
  ========================================================================== */
-	
-	$color1: #F69847; //dark grey
-	$color2: #C31F26;//red
-	$color3: #A7A2A9; //grey
-	$color4: #F4F7F5; //off white
-	$color5:#08090A; //black
+
+$color1: #F69847; //dark grey
+$color2: #C31F26; //red
+$color3: #A7A2A9; //grey
+$color4: #F4F7F5; //off white
+$color5:#08090A; //black
 
 
-	// //== Typography
-	// //
-	// //## Font, line-height, and color for body text, headings, and more.
+// //== Typography
+// //
+// //## Font, line-height, and color for body text, headings, and more.
 
-	// $font-family-sans-serif:  "calluna-sans",sans-serif;
-	// $font-family-serif:     'Lora', serif;
-	// //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-	// $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
-	// $font-family-base:        $font-family-sans-serif !default;
-
-
-	// $font-special: 'Lora', 'Papyrus';
+// $font-family-sans-serif:  "calluna-sans",sans-serif;
+// $font-family-serif:     'Lora', serif;
+// //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+// $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+// $font-family-base:        $font-family-sans-serif !default;
 
 
-	//== Media queries breakpoints
-	//
-	//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
-
-	$screen-sm:                  576px !default;
-	$screen-sm-min:              $screen-sm !default;
-
-	$screen-md:                  768px !default;
-	$screen-md-min:              $screen-md !default;
-
-	$screen-lg:                  992px !default;
-	$screen-lg-min:              $screen-lg !default;
-
-	$screen-xl:                  1200px !default;
-	$screen-xl-min:              $screen-lg !default;
+// $font-special: 'Lora', 'Papyrus';
 
 
-	$screen-xxl:                 1920px;
-	$screen-xxl-min:              $screen-xl !default;
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
 
-	// So media queries don't overlap when required, provide a maximum
-	$screen-sm-max:              ($screen-md-min - 1) !default;
-	$screen-md-max:              ($screen-lg-min - 1) !default;
-	$screen-lg-max:              ($screen-xl-min - 1) !default;
-	$screen-xl-max:              ($screen-xxl-min - 1) !default;
+$screen-sm: 576px !default;
+$screen-sm-min: $screen-sm !default;
+
+$screen-md: 768px !default;
+$screen-md-min: $screen-md !default;
+
+$screen-lg: 992px !default;
+$screen-lg-min: $screen-lg !default;
+
+$screen-xl: 1200px !default;
+$screen-xl-min: $screen-lg !default;
 
 
-	$font-sans-serif:'Lato', sans-serif;
-	$font-serif:'Noto Serif', serif;
-	
-	$font-special:"Metrisch";
+$screen-xxl: 1920px;
+$screen-xxl-min: $screen-xl !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+$screen-lg-max: ($screen-xl-min - 1) !default;
+$screen-xl-max: ($screen-xxl-min - 1) !default;
+
+
+$font-sans-serif:'Lato',
+sans-serif;
+$font-serif:'Noto Serif',
+serif;
+
+$font-special:"Metrisch";
 
 /* ==========================================================================
 #Mixins
 ========================================================================== */
 
-	@mixin e($element){
+@mixin e($element) {
 
-	  &__#{$element}{
-	    @content;
-	  }
+	&__#{$element} {
+		@content;
 	}
+}
 
-	@mixin m($modifier){
-	  &--#{$modifier}{
-	    @content;
-	  }
+@mixin m($modifier) {
+	&--#{$modifier} {
+		@content;
 	}
+}
 
-	@function strip-unit($value) {
-	  @return $value / ($value * 0 + 1);
-	}
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
 
-	@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
-		$u1: unit($min-vw);
-		$u2: unit($max-vw);
-		$u3: unit($min-font-size);
-		$u4: unit($max-font-size);
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-font-size);
+	$u4: unit($max-font-size);
 
-		@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-			& {
-				font-size: $min-font-size;
-				@media screen and (min-width: $min-vw) {
-					font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-				}
-				@media screen and (min-width: $max-vw) {
-					font-size: $max-font-size;
-				}
+	@if $u1==$u2 and $u1==$u3 and $u1==$u4 {
+		& {
+			font-size: $min-font-size;
+
+			@media screen and (min-width: $min-vw) {
+				font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+			}
+
+			@media screen and (min-width: $max-vw) {
+				font-size: $max-font-size;
 			}
 		}
 	}
+}
 
-	%padding-one{
-		padding:1rem;
-	}
+%padding-one {
+	padding: 1rem;
+}
 
-	%padding-two{
-		padding:2rem 1rem;
-	}
+%padding-two {
+	padding: 2rem 1rem;
+}
 
-	%padding-three{
-		padding:3rem 1rem;
-	}
+%padding-three {
+	padding: 3rem 1rem;
+}
 
-	%padding-four{
-		padding:4rem 1rem;
-	}
+%padding-four {
+	padding: 4rem 1rem;
+}
 
-	%padding-eight{
-		padding:8rem 1rem;
-	}
+%padding-eight {
+	padding: 8rem 1rem;
+}
 
 /* ==========================================================================
 #Base
 ========================================================================== */
 
-	$min_width: 320px;
-	$max_width: 1200px;
-	$min_font: 14px;
-	$max_font: 16px;
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 14px;
+$max_font: 16px;
 
-	html {
-	  @include fluid-type($min_width, $max_width, $min_font, $max_font);
-	}
+html {
+	@include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
 
-	body{
-		line-height:1.5;
-	}
+body {
+	line-height: 1.5;
+}
 
-	$mod_1: 1.2; // mobile
-	$mod_2: 1.408; // desktop
+$mod_1: 1.2; // mobile
+$mod_2: 1.408; // desktop
 
-	h1 {  
-	  font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem; 
-	  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
-	}
-	h2 {  
-	  font-size: $mod_1*$mod_1*$mod_1 *1rem; 
-	  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
-	}
-	h3 { 
-	  font-size: $mod_1*$mod_1 *1rem;
-	  @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
-	}
+h1 {
+	font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
+	@include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+
+h2 {
+	font-size: $mod_1*$mod_1*$mod_1 *1rem;
+	@include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+
+h3 {
+	font-size: $mod_1*$mod_1 *1rem;
+	@include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+}
 
 
-	h1,h2,h3,h4,h5,h6{
-		line-height:1.5;
-		margin-bottom:.8rem;
-	}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.5;
+	margin-bottom: .8rem;
+}
 
-	p, ul, ol, pre, table, blockquote {
-	  margin-top: 0rem;
-	  margin-bottom: 1.5rem;
-	}
-	ul ul, ol ol, ul ol, ol ul {
-	  margin-top: 0rem;
-	  margin-bottom: 0rem;
-	}
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+	margin-top: 0rem;
+	margin-bottom: 1.5rem;
+}
 
-	/* Let's make sure all's aligned */
-	hr, .hr {
-	  border: 1px solid;
-	  margin: -1px 0;
-	}
-	a, b, i, strong, em, small, code {
-	  line-height: 0;
-	}
-	sub, sup {
-	  line-height: 0;
-	  position: relative;
-	  vertical-align: baseline;
-	}
-	sup {
-	  top: -0.5em;
-	}
-	sub {
-	  bottom: -0.25em;
-	}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+}
+
+/* Let's make sure all's aligned */
+hr,
+.hr {
+	border: 1px solid;
+	margin: -1px 0;
+}
+
+a,
+b,
+i,
+strong,
+em,
+small,
+code {
+	line-height: 0;
+}
+
+sub,
+sup {
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
 
 
 /* ==========================================================================
@@ -209,23 +240,23 @@
 ========================================================================== */
 
 
-.main-header{
-	padding-top:1rem;
+.main-header {
+	padding-top: 1rem;
 	padding-bottom: 1rem;
 	position: absolute;
-	top: 0 ;
-	left:0;
-	right:0;
+	top: 0;
+	left: 0;
+	right: 0;
 	width: 100%;
 	z-index: 2;
 
-	@media(min-width: $screen-md){
-		padding-top:3rem;
+	@media(min-width: $screen-md) {
+		padding-top: 3rem;
 		padding-bottom: 3rem;
 	}
 }
 
-.main-header__container{
+.main-header__container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -233,48 +264,106 @@
 	width: 100%;
 }
 
-.main-header__logo{
+.main-header__logo {
 	display: inline-block;
 	width: 8.125rem;
 
-	@media(min-width: $screen-sm){
+	@media(min-width: $screen-sm) {
 		position: absolute;
 		left: 0;
 	}
 }
 
-.main-header__menu{
+.main-header__menu {
 	display: none;
 }
 
-.main-menu__nav, .main-header__quick-nav{
+.main-menu__nav,
+.main-header__quick-nav {
 	font-weight: 900;
 }
 
-.quick-nav__item, .main-menu__item{
+.quick-nav__item,
+.main-menu__item {
 	color: #fff;
-	display:inline-block;
+	display: inline-block;
 	padding: .5rem;
 
-	&:hover{
+	&:hover {
 		text-decoration: none;
 	}
 }
 
-.main-header__quick-nav{
-	display: none;
+.quick-nav__item {
+	position: relative;
+	display: inline-block;
+	margin: 15px 25px;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
 	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+	z-index: 2;
+	font-size: .8rem;
+	padding: 1rem;
 
+	span {
+		position: relative;
+		z-index: 4;
+	}
+}
+
+.main-header__quick-nav {
+    display: none;
+	text-transform: uppercase;
+	
 	@media(min-width: $screen-md){
 		display: block;
 	}
 }
 
-.quick-nav__item{
-	font-size: .75rem;
+
+
+/* Effect 13: three circles */
+
+.main-header__quick-nav a {
+	-webkit-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	transition: color 0.3s;
 }
 
-.hero.main-hero{
+.main-header__quick-nav a::before {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	color: transparent;
+	content: '•';
+	text-shadow: 0 0 transparent;
+	font-size: 1.2em;
+	-webkit-transition: text-shadow 0.3s, color 0.3s;
+	-moz-transition: text-shadow 0.3s, color 0.3s;
+	transition: text-shadow 0.3s, color 0.3s;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	transform: translateX(-50%);
+	pointer-events: none;
+}
+
+.main-header__quick-nav a:hover::before,
+.main-header__quick-nav a:focus::before {
+	color: $color1;
+	text-shadow: 10px 0  $color1, -10px 0 $color1;
+}
+
+.main-header__quick-nav a:hover,
+.main-header__quick-nav a:focus {
+	color: #fff;
+}
+
+/* End Effect 13: three circles */
+
+.hero.main-hero {
 	height: 100vh;
 	width: 100%;
 	background: url('/images/hero4.jpg') no-repeat center;
@@ -283,13 +372,13 @@
 	align-content: center;
 	position: relative;
 
-	.container{
+	.container {
 		position: relative;
 		z-index: 2;
 		color: #fff;
 	}
 
-	&:after{
+	&:after {
 		content: " ";
 		position: absolute;
 		width: 100%;
@@ -300,49 +389,51 @@
 		z-index: 0;
 		background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
 		background-image: linear-gradient(to right, #313434 0%, #313434 100%);
-		opacity: .6;
+		opacity: .8;
 	}
 }
-.small-c{
+
+.small-c {
 	text-transform: lowercase;
 	display: inline-block;
 }
 
-.hero__column{
+.hero__column {
 	max-width: 900px;
 }
 
-.hero__tagline{
-
+.hero__tagline {
 	color: #fff;
 	font-weight: 900;
 	text-transform: uppercase;
 
-
-	@media(min-width:$screen-md){
+	@media(min-width:$screen-md) {
 		font-size: 5rem;
 		line-height: 5rem;
-		padding-bottom:  2rem;
-	}	
+		padding-bottom: 2rem;
+	}
 }
 
-.hero__content{
-	font-size: 1.5rem;
+.hero__content {
 	margin-bottom: 2rem;
+
+	@media(min-width: $screen-sm) {
+		font-size: 1.5rem;
+	}
 }
 
-.hero__btn{
+.hero__btn {
 	font-size: 1.5rem;
 	color: #fff;
 	padding-left: 0;
 	display: inline-flex;
 
-	&:hover{
+	&:hover {
 		color: #fff;
 	}
 }
 
-.btn__arrow{
+.btn__arrow {
 	width: 3rem;
 	display: inline-block;
 	background: $color1;
@@ -353,7 +444,7 @@
 	padding: 1rem;
 	transition: all .2s ease-in-out;
 
-	svg{
+	svg {
 		display: block;
 		margin: auto;
 		fill: #fff;
@@ -361,15 +452,30 @@
 	}
 }
 
-.hero__btn:hover .btn__arrow{
+.hero__btn:hover .btn__arrow {
 	transform: translateX(2rem);
 	background: transparent;
 	border: 1px solid #fff;
 }
 
-
-
-.about{
+.about {
 	height: 100vh;
 	min-height: 768px;
+}
+
+.nav-button {
+	background: none;
+	border: none;
+	position: absolute;
+	right: 0;
+	padding: 1rem;
+}
+
+.nav-line {
+	height: 1px;
+	background: #fff;
+	width: 30px;
+	display: block;
+	margin-bottom: .5rem;
+	z-index: 2;
 }

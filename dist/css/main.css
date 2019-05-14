@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -6373,20 +6374,35 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.5;
   margin-bottom: .8rem; }
 
-p, ul, ol, pre, table, blockquote {
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
   margin-top: 0rem;
   margin-bottom: 1.5rem; }
 
-ul ul, ol ol, ul ol, ol ul {
+ul ul,
+ol ol,
+ul ol,
+ol ul {
   margin-top: 0rem;
   margin-bottom: 0rem; }
 
 /* Let's make sure all's aligned */
-hr, .hr {
+hr,
+.hr {
   border: 1px solid;
   margin: -1px 0; }
 
-a, b, i, strong, em, small, code {
+a,
+b,
+i,
+strong,
+em,
+small,
+code {
   line-height: 0; }
 
 sub,
@@ -6436,15 +6452,35 @@ sub {
 .main-header__menu {
   display: none; }
 
-.main-menu__nav, .main-header__quick-nav {
+.main-menu__nav,
+.main-header__quick-nav {
   font-weight: 900; }
 
-.quick-nav__item, .main-menu__item {
+.quick-nav__item,
+.main-menu__item {
   color: #fff;
   display: inline-block;
   padding: .5rem; }
-  .quick-nav__item:hover, .main-menu__item:hover {
+  .quick-nav__item:hover,
+  .main-menu__item:hover {
     text-decoration: none; }
+
+.quick-nav__item {
+  position: relative;
+  display: inline-block;
+  margin: 15px 25px;
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  z-index: 2;
+  font-size: .8rem;
+  padding: 1rem; }
+  .quick-nav__item span {
+    position: relative;
+    z-index: 4; }
 
 .main-header__quick-nav {
   display: none;
@@ -6453,9 +6489,38 @@ sub {
     .main-header__quick-nav {
       display: block; } }
 
-.quick-nav__item {
-  font-size: .75rem; }
+/* Effect 13: three circles */
+.main-header__quick-nav a {
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s; }
 
+.main-header__quick-nav a::before {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  color: transparent;
+  content: '•';
+  text-shadow: 0 0 transparent;
+  font-size: 1.2em;
+  -webkit-transition: text-shadow 0.3s, color 0.3s;
+  -moz-transition: text-shadow 0.3s, color 0.3s;
+  transition: text-shadow 0.3s, color 0.3s;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+  pointer-events: none; }
+
+.main-header__quick-nav a:hover::before,
+.main-header__quick-nav a:focus::before {
+  color: #F69847;
+  text-shadow: 10px 0 #F69847, -10px 0 #F69847; }
+
+.main-header__quick-nav a:hover,
+.main-header__quick-nav a:focus {
+  color: #fff; }
+
+/* End Effect 13: three circles */
 .hero.main-hero {
   height: 100vh;
   width: 100%;
@@ -6479,7 +6544,7 @@ sub {
     z-index: 0;
     background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
     background-image: linear-gradient(to right, #313434 0%, #313434 100%);
-    opacity: .6; }
+    opacity: .8; }
 
 .small-c {
   text-transform: lowercase;
@@ -6499,8 +6564,10 @@ sub {
       padding-bottom: 2rem; } }
 
 .hero__content {
-  font-size: 1.5rem;
   margin-bottom: 2rem; }
+  @media (min-width: 576px) {
+    .hero__content {
+      font-size: 1.5rem; } }
 
 .hero__btn {
   font-size: 1.5rem;
@@ -6534,3 +6601,18 @@ sub {
 .about {
   height: 100vh;
   min-height: 768px; }
+
+.nav-button {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 0;
+  padding: 1rem; }
+
+.nav-line {
+  height: 1px;
+  background: #fff;
+  width: 30px;
+  display: block;
+  margin-bottom: .5rem;
+  z-index: 2; }
