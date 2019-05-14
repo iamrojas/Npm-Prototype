@@ -132,3 +132,15 @@ var aboutTitle =  $('.about__title'),
 
 
 
+
+    $(".main-header__button").click(function(e){
+      e.preventDefault();
+      $('body').toggleClass('show');
+    });
+
+    $(".main-header__menu, .main-header__button-overlay").click(function(e){
+      e.preventDefault();
+      $('body').toggleClass('show');
+    });
+
+    
