@@ -21,6 +21,21 @@ var swiper = new Swiper('.featured .swiper-container', {
 });
 
 
+TweenMax.set('.hero', {perspective: 4000});
+
+TweenMax.to(".overlay", 1, {
+  rotation: 90,
+  scale: 2,
+  transformOrigin: "100% 100%",
+  ease: Power2.easeOut,
+  duration: 2
+}); 
+
+TweenMax.from(".hero", 1, {
+  z: 150,
+  transformOrigin: "0% 100%",
+  ease: Power3.easeOut
+}); 
 
 
 
@@ -34,6 +49,12 @@ menu.inert = true;
 el.onclick = function() {
   event.preventDefault();
   menu.inert = false;
+  body.classList.toggle('show');
+}
+
+menu.onclick = function() {
+  event.preventDefault();
+  menu.inert = true;
   body.classList.toggle('show');
 }
 
@@ -68,7 +89,7 @@ function stats(){
   let tal3 = document.querySelector('.int--3');
     
   TweenMax.to(counter3, 1, {
-      var: 100, 
+      var: 1.00, 
       onUpdate: function () {
           tal3.innerHTML = Math.ceil(counter3.var);
       },
@@ -80,7 +101,7 @@ function stats(){
 let controller = new ScrollMagic.Controller();
 
 let scene = new ScrollMagic.Scene({
-  triggerElement: ".case-studies--home",
+  triggerElement: ".home__stats",
   offset: -600
 })
 .on('start', function () {
