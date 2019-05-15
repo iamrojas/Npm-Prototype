@@ -23,124 +23,67 @@ var swiper = new Swiper('.featured .swiper-container', {
 
 
 
-$('a.to-content').click(function(){
-    $('html, body').animate({
-      scrollTop: $( $.attr(this, 'href') ).offset().top
-    }, 500);
-    return false;
+
+//Nav
+let el = document.querySelector('.main-header__button');
+let body = document.querySelector('body');
+let menu = document.querySelector('.main-header__menu');
+
+menu.inert = true;
+
+el.onclick = function() {
+  event.preventDefault();
+  menu.inert = false;
+  body.classList.toggle('show');
+}
+
+
+
+function stats(){
+  let counter = { var: 0 };
+  let tal = document.querySelector('.int--1');
+    
+  TweenMax.to(counter, 1, {
+      var: 8700, 
+      onUpdate: function () {
+          tal.innerHTML = Math.ceil(counter.var);
+      },
+      ease:Circ.easeOut
   });
 
 
-$(".header__menu-toggle").click(function(e){
-  $('body').toggleClass('show');
- 
-});
-
-$('.menu-overlay').click(function(){
-  $('body').toggleClass('show');
-});
-
-
-$('.nav-main').click(function(){
-  $('body').toggleClass('show');
-});
-
-$('.nav-menu li a').hover(
-    function(){
-        //we get our current filename and use it for the src
-        var linkIndex = $(this).attr("data-filename");
-        $(this).addClass('hover');
-        $('.nav__img img').attr('src', 'images/'+linkIndex+'.jpg');
-    },
-    function(){
-        $(this).removeClass('hover');
-        $('.nav__img img').attr('src', 'images/image1.jpg');
-    }
-);
-
-
-var controller = new ScrollMagic.Controller();
-
-//Hero
-var headline1 =  $('.headline'),
-  heroShape =  $('.hero__shape.shape--left'),
-  heroDown =  $('.hero__down'),
-  heroTl = new TimelineMax();
-
-  heroTl
-    .from(headline1, 2, { autoAlpha:0, y:-50, opacity:0, ease:Back.easeOut})
-    .from(heroShape, 3, { autoAlpha:0, x:-50, opacity:0, ease:Power3.easeOut} , '-=1')
-    .from(heroDown, 1, { autoAlpha:0, y:-150, opacity:0, ease:Sine.easeOut}  , '-=2');
+  let counter2 = { var: 0 };
+  let tal2 = document.querySelector('.int--2');
     
-  var scene = new ScrollMagic.Scene({triggerElement: '.hero'})
-    .setTween(heroTl)
-    .addTo(controller);
+  TweenMax.to(counter2, 1, {
+      var: 3300, 
+      onUpdate: function () {
+          tal2.innerHTML = Math.ceil(counter2.var);
+      },
+      ease:Circ.easeOut
+  });
 
-  heroDown.hover(
-     function() {
-        TweenLite.to($(this), 0.04, {ease: Elastic.easeOut.config(1, 0.3),y:-5});
-     },
-     function() {
-        TweenLite.to($(this), 0.04, {ease: Elastic.easeOut.config(1, 0.3), y:0});  
-     }
-  );
 
-//Services
-var serviceImg =  $('.services__img-c'),
-    heroShapeRight =  $('.hero__shape.shape--right'),
-    serviceCol =  $('.services__col'),
-  serviceTl = new TimelineMax();
-
-  serviceTl
-    .from(serviceCol, 2, { autoAlpha:0, y:-150, opacity:0, ease:Back.easeOut} )
-    .from(serviceImg, 2, { autoAlpha:0, y:-150, opacity:0, ease:Back.easeOut} , '-=1.8')
-     .from(heroShapeRight, 2, { autoAlpha:0, x:200, opacity:0, ease:Power3.easeOut} , '-=2');
+  let counter3 = { var: 0.05 };
+  let tal3 = document.querySelector('.int--3');
     
-  var scene = new ScrollMagic.Scene({triggerElement: '.services', offset: -200})
-    .setTween(serviceTl)
-    .addTo(controller);
-
-//Services
-var featuredTitle =  $('.featured__title'),
-    featured =  $('.featured'),
-  featuredTl = new TimelineMax();
-
-  featuredTl
-    .from(featuredTitle, 2, { autoAlpha:0, y:-150, opacity:0, ease:Back.easeOut} )
-    .from(featured, 2, { autoAlpha:0, y:-150, opacity:0, ease:Back.easeOut} , '-=2');
-    
-  var scene = new ScrollMagic.Scene({triggerElement: '.featured__col' , offset: -600})
-    .setTween(featuredTl)
-    .addTo(controller);
+  TweenMax.to(counter3, 1, {
+      var: 100, 
+      onUpdate: function () {
+          tal3.innerHTML = Math.ceil(counter3.var);
+      },
+      ease:Circ.easeOut
+  });
+}
 
 
-//About
-var aboutTitle =  $('.about__title'),
-    aboutImg =  $('.about__img-c'),
-    aboutContent =  $('.about__content'),
-  aboutTl = new TimelineMax();
+let controller = new ScrollMagic.Controller();
 
-  aboutTl
-    .from(aboutTitle, 2, { autoAlpha:0, y:-150, opacity:0, ease:Back.easeOut} )
-    .from(aboutImg, 2, { autoAlpha:0, y:-150, opacity:0, ease:Back.easeOut}, '-=2' )
-    .from(aboutContent, 2, { autoAlpha:0, y:-150, opacity:0, ease:Back.easeOut}, '-=2' );
-    
-  var scene = new ScrollMagic.Scene({triggerElement: '.about' , offset: -600})
-    .setTween(aboutTl)
-    .addTo(controller);
-
-
-
-
-
-    $(".main-header__button").click(function(e){
-      e.preventDefault();
-      $('body').toggleClass('show');
-    });
-
-    $(".main-header__menu, .main-header__button-overlay").click(function(e){
-      e.preventDefault();
-      $('body').toggleClass('show');
-    });
-
-    
+let scene = new ScrollMagic.Scene({
+  triggerElement: ".case-studies--home",
+  offset: -600
+})
+.on('start', function () {
+  stats();
+})
+.addTo(controller);

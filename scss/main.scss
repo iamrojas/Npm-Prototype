@@ -260,6 +260,10 @@ sub {
 	}
 }
 
+.show .main-header{
+	height: 100vh;
+}
+
 .main-header__container {
 	display: flex;
 	align-items: center;
@@ -279,9 +283,12 @@ sub {
 }
 
 .main-header__logo-nav{
-	position: absolute;
-	left: 4rem;
-	width: 12rem;
+
+	@media(min-width: $screen-md){
+		left: 4rem;
+		width: 12rem;
+		position: absolute;
+	}
 }
 
 .main-header__menu {
@@ -300,8 +307,11 @@ sub {
 	bottom: 0;
 	background: #fff url("/images/nav-bg.jpg") no-repeat center;
 	background-size: cover;
-	z-index: 999;
-	padding-right: 4rem;
+	z-index: 3;
+
+	@media(min-width: $screen-md){
+		padding-right: 4rem;
+	}
 }
 
 .show, html{
@@ -310,7 +320,7 @@ sub {
 }
 
 
-.show:after {
+.show .main-header:before {
 	content: " ";
 	position: absolute;
 	width: 100%;
@@ -322,13 +332,16 @@ sub {
 	background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
 	background-image: linear-gradient(to right, #313434 0%, #313434 100%);
 	opacity: .8;
-	z-index: 99;
+	z-index: 3;
 }
 
 .show .main-header__menu{
-	width: 72.3%;
-	width: 50%;
+	width: 85%;
 	transform: translateY(0);
+
+	@media(min-width:$screen-sm){
+		width:50%;
+	}
 }
 
 .main-menu__nav,
@@ -348,12 +361,16 @@ sub {
 
 .main-menu__item{
 	display: block;
-	font-size: 2rem;
 	text-align: right;
-	padding: 2.5rem 0;
-	padding-left: 8rem;
-    border-bottom: 1px solid #333;
+	border-bottom: 1px solid #333;
+	
+	@media(min-width: $screen-md){
+		font-size: 2rem;
+		padding: 2.5rem 0;
+		padding-left: 8rem;
+	}
 }
+
 
 .quick-nav__item {
 	position: relative;
@@ -452,7 +469,7 @@ a.main-header__button-overlay .nav-line{
 
 	.container {
 		position: relative;
-		z-index: 2;
+		z-index: 1;
 		color: #fff;
 	}
 
@@ -484,6 +501,9 @@ a.main-header__button-overlay .nav-line{
 	color: #fff;
 	font-weight: 900;
 	text-transform: uppercase;
+	font-size: 2rem;
+	line-height: 2rem;
+	padding-bottom: 2rem;
 
 	@media(min-width:$screen-md) {
 		font-size: 5rem;
@@ -501,10 +521,14 @@ a.main-header__button-overlay .nav-line{
 }
 
 .hero__btn {
-	font-size: 1.5rem;
+	font-size: 1rem;
 	color: #fff;
 	padding-left: 0;
 	display: inline-flex;
+
+	@media(min-width:$screen-md){
+		font-size: 1.5rem;
+	}
 
 	&:hover {
 		color: #fff;
@@ -549,18 +573,13 @@ a.main-header__button-overlay .nav-line{
 	background: transparent;
 	border: 1px solid #fff;
 }
-
-.about {
-	height: 100vh;
-	min-height: 768px;
-}
-
 .nav-button {
 	background: none;
 	border: none;
 	position: absolute;
 	right: 0;
 	padding: 1rem;
+	z-index: 4;
 }
 
 .nav-line {
@@ -570,4 +589,29 @@ a.main-header__button-overlay .nav-line{
 	display: block;
 	margin-bottom: .5rem;
 	z-index: 2;
+	transition: all .4s ease-in-out;
+}
+
+.show .nav-line{
+	background: #333;
+}
+
+.case-studies--home{
+	padding-top: 8rem;
+	padding-bottom: 8rem;
+}
+
+.stat{
+	text-align: center;
+}
+
+.stat__int{
+	font-size: 4rem;
+	font-weight: 900;
+	text-align: center;
+}
+
+.stat__label{
+	font-size: 1rem;
+	display: block
 }
