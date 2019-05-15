@@ -448,3 +448,11 @@ a.main-header__button-overlay .nav-line {
 
 .case-studies__content {
   margin-bottom: 2rem; }
+
+.case-hero {
+  background: url("/images/imag1.jpg") no-repeat center;
+  background-size: cover; }
+
+.case__images {
+  padding-top: 16rem;
+  padding-bottom: 16rem; }
