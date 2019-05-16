@@ -1,9 +1,7 @@
-var swiper = new Swiper('.featured .swiper-container', {
+var swiper = new Swiper('.investment__swiper', {
   slidesPerView: 1,
   spaceBetween: 0,
   loop: true,
-  effect: 'fade',
-  speed:2000,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
@@ -12,11 +10,10 @@ var swiper = new Swiper('.featured .swiper-container', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  fadeEffect: {
-    crossFade: true
-  },
-   autoplay: {
-    delay: 5000,
+  a11y: {
+
+    prevSlideMessage: 'Previous slide',
+    nextSlideMessage: 'Next slide',
   },
 });
 
@@ -43,13 +40,15 @@ TweenMax.from(".hero", 1, {
 let el = document.querySelector('.main-header__button');
 let body = document.querySelector('body');
 let menu = document.querySelector('.main-header__menu');
-
+let menuTl = new TimelineMax();
 menu.inert = true;
+
 
 el.onclick = function() {
   event.preventDefault();
   menu.inert = false;
   body.classList.toggle('show');
+
 }
 
 menu.onclick = function() {
@@ -57,7 +56,6 @@ menu.onclick = function() {
   menu.inert = true;
   body.classList.toggle('show');
 }
-
 
 
 function stats(){
@@ -108,3 +106,28 @@ let scene = new ScrollMagic.Scene({
   stats();
 })
 .addTo(controller);
+
+
+
+
+let controller2 = new ScrollMagic.Controller();
+
+function border(){
+  TweenMax.to(".bottom-border", 1, {
+    width: "100%",
+    transformOrigin: "100% 100%",
+    ease: Power2.easeOut
+  }); 
+}
+
+
+let scene2 = new ScrollMagic.Scene({
+  triggerElement: ".case-studies__home",
+  offset: -600,
+  duration: 15
+})
+.on('start', function () {
+  border();
+})
+.addTo(controller2);
+

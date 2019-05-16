@@ -11,7 +11,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
 		integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 </head>
 
@@ -65,7 +65,6 @@
 	</header>
 
 	<div class="hero main-hero">
-		<div class="overlay"></div>
 		<div class="container">
 			<div class="column hero__column">
 				<h1 class="hero__tagline">M<span class="small-c">c</span>Cann <br> Realty Partners</h1>
@@ -120,19 +119,19 @@
 			</div>
 		</div>
 	</section>
-
+	<div class="bottom-border"></div>
 	<section class="case-studies__home">
-		<div class="container">
+		<div class="container case__copy">
 			<div class="columns">
 				<div class="column is-4">
+					<h3 class="case-studies__subtitle">Learn about our</h3>
 					<h2 class="case-studies__title">Case Studies</h2>
-					
+					<a class="btn" href="">Learn More</a>
 				</div>
 				<div class="column is-8">
 					<p class="case-studies__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem pariatur provident corrupti nesciunt, voluptate, est quaerat, laborum culpa delectus quam voluptatibus. Beatae voluptate id facilis modi omnis est distinctio aspernatur. 
 						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam aut exercitationem praesentium necessitatibus sint at perspiciatis, sed provident neque, illum excepturi officiis delectus qui fugit ea voluptatibus, ad veritatis culpa.
 						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam aut exercitationem praesentium necessitatibus sint at perspiciatis, sed provident neque, illum excepturi officiis delectus qui fugit ea voluptatibus, ad veritatis culpa.</p>
-					<a class="btn" href="">Learn More</a>
 				</div>
 			</div>
 		</div>
@@ -143,12 +142,82 @@
 					<img src="images/imag1.jpg" alt="">
 				</div>
 
-				<div class="is-8 column case-hero">
+				<div class="is-8 column">
+					<div class="case-hero">
 
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	<section class="investments--home">
+		<div class="container">
+			<div class="columns">
+				<div class="column is-6">
+					<div class="swiper-container investment__swiper">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<div class="swiper-slide"><img src="images/Mosiac_at_MTC_058.jpg" alt=""></div>
+							<div class="swiper-slide"><img src="images/Mosiac_at_MTC_058.jpg" alt=""></div>
+							<div class="swiper-slide"><img src="images/Mosiac_at_MTC_058.jpg" alt=""></div>
+							...
+						</div>
+						<!-- If we need pagination -->
+						<div class="swiper-pagination"></div>
+					
+						<!-- If we need navigation buttons -->
+						<div class="swiper-button-prev swiper-button-white"></div>
+						<div class="swiper-button-next swiper-button-white"></div>
+					
+						<!-- If we need scrollbar -->
+						<div class="swiper-scrollbar"></div>
+					</div>
+				</div>
+				<div class="column is-6">
+					<div class="investment__content">
+						<h3 class="investment__title--home">Decades of experience and a strong track record</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus molestie gravida. Duis sodales sapien ex, vel tristique mauris ornare in. Integer dui lacus, fringilla sit amet lorem blandit, feugiat scelerisque ex. 
+							Etiam varius lectus eget diam tincidunt, vitae sollicitudin quam iaculis. Quisque vel rutrum lorem.
+						</p>
+						<a class="btn" href="">Learn More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="bottom-border border-footer"></div>
+	<footer class="main-footer">
+		<div class="container">
+			<div class="columns">
+				<div class="column is-2">
+					<a href="/" class="main-header__logo">
+						<img src="/images/logo.png" alt="main-logo">
+					</a>
+				</div>
+				<div class="column is-4 main-footer__address">
+						<h4>Contact Us</h4>
+					<p>2520-B Gaskins Road Richmond, VA 23238 </p>
+					<p> Phone: (804) 290-8870 | Fax: (804) 747-7848</p>
+				</div>
+
+				<div class="column is-7 main-footer__nav">
+					<h4>Navigation</h4>
+					<ul class="main-footer__nav-list">
+						<li><a>Home</a></li>
+						<li><a>Who we are</a></li>
+						<li><a>What we do</a></li>
+						<li><a>Case Studies</a></li>
+						<li><a>Portfolio</a></li>
+						<li><a>Investment</a></li>
+						<li><a>News</a></li>
+						<li><a>Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -157,7 +226,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 	<script src="js/inert.js"></script>
 	<script src="js/main.js"></script>

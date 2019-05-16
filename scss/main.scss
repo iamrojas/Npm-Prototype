@@ -140,64 +140,61 @@ $font-special:"Metrisch";
 #Base
 ========================================================================== */
 
-$min_width: 320px;
-$max_width: 1200px;
-$min_font: 14px;
-$max_font: 16px;
+/* $rembase = 10px */
 
 html {
-	@include fluid-type($min_width, $max_width, $min_font, $max_font);
+	font-size: 62.5%;
 }
 
 body {
-	line-height: 1.5;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-size: 1.0rem; /* 10 ÷ $rembase */
 }
 
-$mod_1: 1.2; // mobile
-$mod_2: 1.408; // desktop
+body{
+	h1,
+	h2 {
+		font-size: 2.6rem; /* 26 ÷ $rembase */
+	}
 
-h1 {
-	font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
-	@include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+	h3,
+	h4 {
+		font-size: 1.8rem; /* 18 ÷ $rembase */
+	}
 }
 
-h2 {
-	font-size: $mod_1*$mod_1*$mod_1 *1rem;
-	@include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+body{
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		line-height: 1.5;
+		margin-bottom: .8rem;
+		font-weight: 900;
+	}
 }
 
-h3 {
-	font-size: $mod_1*$mod_1 *1rem;
-	@include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
-}
 
+body{
+	p,
+	ul,
+	ol,
+	pre,
+	table,
+	blockquote {
+		margin-top: 0rem;
+		margin-bottom: 1.5rem;
+	}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.5;
-	margin-bottom: .8rem;
-}
-
-p,
-ul,
-ol,
-pre,
-table,
-blockquote {
-	margin-top: 0rem;
-	margin-bottom: 1.5rem;
-}
-
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-	margin-top: 0rem;
-	margin-bottom: 0rem;
+	ul ul,
+	ol ol,
+	ul ol,
+	ol ul {
+		margin-top: 0rem;
+		margin-bottom: 0rem;
+	}
 }
 
 /* Let's make sure all's aligned */
@@ -234,11 +231,20 @@ sub {
 
 
 .btn{
-	padding: 10px 30px;
-	background: $color1;
+	padding: 1.5rem 4rem;
+	background: #383838;
 	color: #fff;
 	border: none;
 	border-radius: 360px;
+	display: inline-block;
+	transition: all .4s ease-in-out;
+	font-weight: 900;
+	border: 1px solid #515356;
+
+	&:hover{
+		color: #fff;
+		background:lighten(#383838, 15%);
+	}
 }
 
 /* ==========================================================================
@@ -289,17 +295,18 @@ sub {
 }
 
 .main-header__logo-nav{
+	display: none;
 
-	@media(min-width: $screen-md){
+	@media(min-width: $screen-lg){
 		left: 4rem;
 		width: 12rem;
 		position: absolute;
+		display: block;
 	}
 }
 
 .main-header__menu {
 	visibility: hidden;
-	display: flex;
 	height: 100vh;
 	width: 0;
 	transform: translateX(100vw);
@@ -314,8 +321,14 @@ sub {
 	background: #fff url("/images/nav-bg.jpg") no-repeat center;
 	background-size: cover;
 	z-index: 3;
-
+	padding-top: 8rem;
+	
 	@media(min-width: $screen-md){
+		display: flex;
+		padding-right: 2rem;
+	}
+
+	@media(min-width: $screen-lg){
 		padding-right: 4rem;
 	}
 }
@@ -345,7 +358,7 @@ sub {
 	width: 85%;
 	transform: translateY(0);
 
-	@media(min-width:$screen-sm){
+	@media(min-width:$screen-xxl){
 		width:50%;
 	}
 }
@@ -369,8 +382,19 @@ sub {
 	display: block;
 	text-align: right;
 	border-bottom: 1px solid #333;
-	
+	font-size: 1.5rem;
+    padding: 1.5rem;
+	font-size: 1.5rem;
+	padding: 1.5rem;
+
 	@media(min-width: $screen-md){
+		font-size: 1.8rem;
+		padding: 2rem 0;
+		padding-left: 8rem;
+	}
+
+	
+	@media(min-width: $screen-lg){
 		font-size: 2rem;
 		padding: 2.5rem 0;
 		padding-left: 8rem;
@@ -411,6 +435,10 @@ sub {
 	position: absolute;
 	bottom: 2rem;
 	font-size: .9rem;
+
+	p{
+		margin-bottom: 0;
+	}
 }
 
 
@@ -508,7 +536,8 @@ a.main-header__button-overlay .nav-line{
 	display: inline-block;
 }
 
-.hero__column {
+.column.hero__column {
+	padding: 2rem;
 	max-width: 900px;
 }
 
@@ -520,7 +549,7 @@ a.main-header__button-overlay .nav-line{
 	line-height: 2rem;
 	padding-bottom: 2rem;
 
-	@media(min-width:$screen-md) {
+	@media(min-width:$screen-xxl) {
 		font-size: 5rem;
 		line-height: 5rem;
 		padding-bottom: 2rem;
@@ -530,7 +559,7 @@ a.main-header__button-overlay .nav-line{
 .hero__content {
 	margin-bottom: 2rem;
 
-	@media(min-width: $screen-sm) {
+	@media(min-width: $screen-xxl) {
 		font-size: 1.5rem;
 	}
 }
@@ -542,7 +571,7 @@ a.main-header__button-overlay .nav-line{
 	display: inline-flex;
 	line-height: 2.5rem;
 
-	@media(min-width:$screen-md){
+	@media(min-width:$screen-xxl){
 		font-size: 1.5rem;
 	}
 
@@ -566,21 +595,23 @@ a.main-header__button-overlay .nav-line{
 }
 
 .btn__arrow {
-	width: 3rem;
 	display: inline-block;
 	background: $color1;
 	border-radius: 50%;
+	margin-left: 2rem;
+	transition: all .2s ease-in-out;
+	
+	width: 3rem;
 	height: 3rem;
 	line-height: 3rem;
-	margin-left: 2rem;
 	padding: 1rem;
-	transition: all .2s ease-in-out;
 
 	svg {
 		display: block;
 		margin: auto;
 		fill: #fff;
 		transition: all .2s ease-in-out;
+		max-width: 80%;
 	}
 }
 
@@ -613,27 +644,56 @@ a.main-header__button-overlay .nav-line{
 }
 
 .home__stats{
-	padding-top: 8rem;
-	padding-bottom: 8rem;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	margin-bottom: 2rem;
+
+	@media(min-width: $screen-md){
+		padding-top: 8rem;
+		padding-bottom: 8rem;
+	}
+}
+
+.bottom-border{
+	width: 0;
+	height: 2rem;
+	background: #F2994A;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	margin-bottom: 2rem;
 }
 
 .stat{
 	text-align: center;
+	border-right: 1px solid #b9b9b9;
+	
+}
+
+.home__stats .columns .column:nth-child(1){
+	border-left: 1px solid #b9b9b9;
 }
 
 .stat__int{
-	font-size: 4rem;
+	font-size: 2rem;
 	font-weight: 900;
 	text-align: center;
+
+	@media(min-width: $screen-md){
+		font-size: 4rem;
+	}	
 }
 
 .stat__label{
-	font-size: 1rem;
-	display: block
+	font-size: .8rem;
+	display: block;
+
+	@media(min-width: $screen-md){
+		font-size: 1rem;
+	}	
 }
 
 .case-studies__home{
-	padding: 8rem 0;
+	padding: 4rem 1rem;
 }
 
 .case-studies__title{
@@ -643,17 +703,88 @@ a.main-header__button-overlay .nav-line{
 	margin-bottom: 2rem;
 }
 
+.case-studies__subtitle{
+	font-size: 1.2rem;
+	font-weight: 900;
+	opacity: .8;
+	line-height: 1rem;
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
 .case-studies__content{
 	margin-bottom: 2rem;
 }
 
 .case-hero{
-	background: url('/images/imag1.jpg') no-repeat center;
+	background: url('/images/Mosiac_63.jpg') no-repeat bottom center;
 	background-size: cover;
-
 }
 
-.case__images{
-	padding-top: 16rem;
-	padding-bottom: 16rem;
+.container.case__copy{
+	margin-bottom: 4rem;
+}
+
+.case-hero{
+	width: 100%;
+	height: 100%;
+}
+
+.investments--home{
+	padding: 8rem 0;
+}
+
+.investment__content{
+	padding: 4rem;
+}
+
+.investment__title--home{
+	text-transform: uppercase;
+	line-height: 2rem;
+}
+
+.main-footer{
+	background: #eee;
+	padding: 4rem 1rem;
+
+	@media(min-width: $screen-md){
+		padding: 8rem 1rem;
+	}
+}
+
+.main-footer__address h4{
+	font-size: 1.2rem;
+	opacity: .8;
+}
+
+.main-footer__address p{
+	margin-bottom: 0;
+}
+
+.main-footer__nav h4{
+	font-size: 1.2rem;
+	opacity: .8;
+}
+
+.main-footer__nav-list{
+
+	li{
+		display: inline;
+	}
+	
+	a{
+		display: inline-block;
+		padding-right: 1rem;
+		color: #333;
+		text-decoration: underline;
+	}
+}
+
+.investment__swiper .swiper-pagination-bullet-active {
+	opacity: 1;
+	background: $color1;
+}
+
+.border-footer{
+	margin-bottom: 0;
 }
