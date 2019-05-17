@@ -22,13 +22,23 @@ body {
 
 body h1,
 body h2 {
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   /* 26 ÷ $rembase */ }
+  @media (min-width: 768px) {
+    body h1,
+    body h2 {
+      font-size: 2.6rem;
+      /* 26 ÷ $rembase */ } }
 
 body h3,
 body h4 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   /* 18 ÷ $rembase */ }
+  @media (min-width: 768px) {
+    body h3,
+    body h4 {
+      font-size: 1.8rem;
+      /* 18 ÷ $rembase */ } }
 
 body h1,
 body h2,
@@ -48,6 +58,11 @@ body table,
 body blockquote {
   margin-top: 0rem;
   margin-bottom: 1.5rem; }
+
+@media (max-width: 767px) {
+  body p {
+    font-size: .9rem;
+    line-height: 1.5rem; } }
 
 body ul ul,
 body ol ol,
@@ -92,7 +107,11 @@ sub {
   display: inline-block;
   transition: all .4s ease-in-out;
   font-weight: 900;
-  border: 1px solid #515356; }
+  border: 1px solid #515356;
+  font-size: .8rem; }
+  @media (min-width: 768px) {
+    .btn {
+      font-size: 1rem; } }
   .btn:hover {
     color: #fff;
     background: #5e5e5e; }
@@ -108,7 +127,8 @@ sub {
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 2; }
+  z-index: 2;
+  padding-left: 1rem; }
   @media (min-width: 576px) {
     .main-header {
       padding-top: 4rem; } }
@@ -164,7 +184,8 @@ sub {
   @media (min-width: 768px) {
     .main-header__menu {
       display: flex;
-      padding-right: 2rem; } }
+      padding-right: 2rem;
+      padding-top: 0; } }
   @media (min-width: 992px) {
     .main-header__menu {
       padding-right: 4rem; } }
@@ -215,22 +236,24 @@ sub {
   font-size: 1.5rem;
   padding: 1.5rem;
   font-size: 1.5rem;
-  padding: 1.5rem; }
+  padding: 1.5rem;
+  transition: all .4s ease-in-out; }
+  .main-menu__item:hover {
+    color: #F69847; }
   @media (min-width: 768px) {
     .main-menu__item {
-      font-size: 1.8rem;
-      padding: 2rem 0;
+      font-size: 1.5rem;
+      padding: 1.4rem 0;
       padding-left: 8rem; } }
-  @media (min-width: 992px) {
+  @media (min-width: 1920px) {
     .main-menu__item {
-      font-size: 2rem;
-      padding: 2.5rem 0;
+      font-size: 1.8rem;
+      padding: 2.2rem 0;
       padding-left: 8rem; } }
 
 .quick-nav__item {
   position: relative;
   display: inline-block;
-  margin: 15px 25px;
   outline: none;
   color: #fff;
   text-decoration: none;
@@ -254,7 +277,8 @@ sub {
 .nav-footer {
   position: absolute;
   bottom: 2rem;
-  font-size: .9rem; }
+  font-size: .9rem;
+  padding: 1rem; }
   .nav-footer p {
     margin-bottom: 0; }
 
@@ -424,11 +448,11 @@ a.main-header__button-overlay .nav-line {
   background: #333; }
 
 .home__stats {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  margin-bottom: 2rem; }
-  @media (min-width: 768px) {
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  @media (min-width: 992px) {
     .home__stats {
+      margin-bottom: 2rem;
       padding-top: 8rem;
       padding-bottom: 8rem; } }
 
@@ -454,7 +478,7 @@ a.main-header__button-overlay .nav-line {
   font-size: 2rem;
   font-weight: 900;
   text-align: center; }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     .stat__int {
       font-size: 4rem; } }
 
@@ -466,13 +490,20 @@ a.main-header__button-overlay .nav-line {
       font-size: 1rem; } }
 
 .case-studies__home {
-  padding: 4rem 1rem; }
+  padding: 1rem; }
+  @media (min-width: 768px) {
+    .case-studies__home {
+      padding: 4rem 1rem; } }
 
 .case-studies__title {
-  font-size: 2.625rem;
+  font-size: 2.025rem;
+  margin-bottom: .5rem;
   text-transform: uppercase;
-  font-weight: 900;
-  margin-bottom: 2rem; }
+  font-weight: 900; }
+  @media (min-width: 768px) {
+    .case-studies__title {
+      font-size: 2.625rem;
+      margin-bottom: 2rem; } }
 
 .case-studies__subtitle {
   font-size: 1.2rem;
@@ -489,18 +520,20 @@ a.main-header__button-overlay .nav-line {
   background: url("/images/Mosiac_63.jpg") no-repeat bottom center;
   background-size: cover; }
 
-.container.case__copy {
-  margin-bottom: 4rem; }
+@media (min-width: 768px) {
+  .container.case__copy {
+    margin-bottom: 4rem; } }
 
 .case-hero {
   width: 100%;
   height: 100%; }
 
-.investments--home {
-  padding: 8rem 0; }
+@media (min-width: 768px) {
+  .investments--home {
+    padding: 8rem 1rem; } }
 
 .investment__content {
-  padding: 4rem; }
+  padding: 2rem; }
 
 .investment__title--home {
   text-transform: uppercase;
@@ -539,3 +572,12 @@ a.main-header__button-overlay .nav-line {
 
 .border-footer {
   margin-bottom: 0; }
+
+.case-studies__subtitle, .case-studies__title, .case-studies__btn, .case-studies__content,
+.case__images--left, .case__images--right, .investment__left, .investment__right {
+  opacity: 0; }
+
+.copy__footer {
+  padding: 2rem;
+  background: #333;
+  color: #fff; }

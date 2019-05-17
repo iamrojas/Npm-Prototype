@@ -35,7 +35,6 @@ TweenMax.from(".hero", 1, {
 }); 
 
 
-
 //Nav
 let el = document.querySelector('.main-header__button');
 let body = document.querySelector('body');
@@ -95,7 +94,6 @@ function stats(){
   });
 }
 
-
 let controller = new ScrollMagic.Controller();
 
 let scene = new ScrollMagic.Scene({
@@ -107,9 +105,6 @@ let scene = new ScrollMagic.Scene({
 })
 .addTo(controller);
 
-
-
-
 let controller2 = new ScrollMagic.Controller();
 
 function border(){
@@ -119,7 +114,6 @@ function border(){
     ease: Power2.easeOut
   }); 
 }
-
 
 let scene2 = new ScrollMagic.Scene({
   triggerElement: ".case-studies__home",
@@ -131,3 +125,53 @@ let scene2 = new ScrollMagic.Scene({
 })
 .addTo(controller2);
 
+var introAnime = new Waypoint({
+  element: document.getElementById('hero'),
+  handler: function(direction) {
+      anime({
+          targets: ['.hero__tagline','.hero__content','.hero__btn', '.hero-arrow'],
+          opacity: [0, 1],
+          translateY: [-50, 0],
+          duration: 800,
+          easing: 'easeInOutQuad',
+          delay: function(el, index) {
+              return index * 400;
+          },
+      })
+  },
+  offset: 1000
+});
+
+var caseAnime = new Waypoint({
+  element: document.getElementById('case-studies'),
+  handler: function(direction) {
+      anime({
+          targets: ['.case-studies__subtitle','.case-studies__title','.case-studies__btn', '.case-studies__content', '.case__images--left', '.case__images--right'],
+          opacity: [0, 1],
+          translateY: [-50, 0],
+          duration: 800,
+          easing: 'easeInOutQuad',
+          delay: function(el, index) {
+              return index * 400;
+          },
+      })
+  },
+  offset: 1400
+});
+
+var investmentAnime = new Waypoint({
+  element: document.getElementById('investment-home'),
+  handler: function(direction) {
+      anime({
+          targets: ['.investment__left', '.investment__right'],
+          opacity: [0, 1],
+          translateY: [-50, 0],
+          duration: 800,
+          easing: 'easeInOutQuad',
+          delay: function(el, index) {
+              return index * 400;
+          },
+      })
+  },
+  offset: 1000
+});

@@ -154,12 +154,20 @@ body {
 body{
 	h1,
 	h2 {
-		font-size: 2.6rem; /* 26 ÷ $rembase */
+		font-size: 2.2rem; /* 26 ÷ $rembase */
+
+		@media(min-width: $screen-md){
+			font-size: 2.6rem; /* 26 ÷ $rembase */
+		}
+		
 	}
 
 	h3,
 	h4 {
-		font-size: 1.8rem; /* 18 ÷ $rembase */
+		font-size: 1.6rem; /* 18 ÷ $rembase */
+		@media(min-width: $screen-md){
+			font-size: 1.8rem; /* 18 ÷ $rembase */
+		}
 	}
 }
 
@@ -186,6 +194,15 @@ body{
 	blockquote {
 		margin-top: 0rem;
 		margin-bottom: 1.5rem;
+	}
+
+	p{
+		
+
+		@media(max-width: $screen-sm-max){
+			font-size: .9rem;
+			line-height: 1.5rem;
+		}
 	}
 
 	ul ul,
@@ -240,6 +257,11 @@ sub {
 	transition: all .4s ease-in-out;
 	font-weight: 900;
 	border: 1px solid #515356;
+	font-size: .8rem;
+
+	@media(min-width: $screen-md){
+		font-size: 1rem;
+	}
 
 	&:hover{
 		color: #fff;
@@ -261,6 +283,7 @@ sub {
 	right: 0;
 	width: 100%;
 	z-index: 2;
+	padding-left: 1rem;
 
 	@media(min-width: $screen-sm) {
 		padding-top: 4rem;
@@ -326,6 +349,7 @@ sub {
 	@media(min-width: $screen-md){
 		display: flex;
 		padding-right: 2rem;
+		padding-top: 0;
 	}
 
 	@media(min-width: $screen-lg){
@@ -383,20 +407,25 @@ sub {
 	text-align: right;
 	border-bottom: 1px solid #333;
 	font-size: 1.5rem;
-    padding: 1.5rem;
+	padding: 1.5rem;
 	font-size: 1.5rem;
 	padding: 1.5rem;
+	transition: all .4s ease-in-out;
+
+	&:hover{
+		color: $color1;
+	}
 
 	@media(min-width: $screen-md){
-		font-size: 1.8rem;
-		padding: 2rem 0;
+		font-size: 1.5rem;
+		padding: 1.4rem 0;
 		padding-left: 8rem;
 	}
 
 	
-	@media(min-width: $screen-lg){
-		font-size: 2rem;
-		padding: 2.5rem 0;
+	@media(min-width: $screen-xxl){
+		font-size: 1.8rem;
+		padding: 2.2rem 0;
 		padding-left: 8rem;
 	}
 }
@@ -405,7 +434,6 @@ sub {
 .quick-nav__item {
 	position: relative;
 	display: inline-block;
-	margin: 15px 25px;
 	outline: none;
 	color: #fff;
 	text-decoration: none;
@@ -435,6 +463,7 @@ sub {
 	position: absolute;
 	bottom: 2rem;
 	font-size: .9rem;
+	padding: 1rem;
 
 	p{
 		margin-bottom: 0;
@@ -548,7 +577,7 @@ a.main-header__button-overlay .nav-line{
 	font-size: 2rem;
 	line-height: 2rem;
 	padding-bottom: 2rem;
-
+	
 	@media(min-width:$screen-xxl) {
 		font-size: 5rem;
 		line-height: 5rem;
@@ -644,11 +673,11 @@ a.main-header__button-overlay .nav-line{
 }
 
 .home__stats{
-	padding-top: 4rem;
-	padding-bottom: 4rem;
-	margin-bottom: 2rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 
-	@media(min-width: $screen-md){
+	@media(min-width: $screen-lg){
+		margin-bottom: 2rem;
 		padding-top: 8rem;
 		padding-bottom: 8rem;
 	}
@@ -678,7 +707,7 @@ a.main-header__button-overlay .nav-line{
 	font-weight: 900;
 	text-align: center;
 
-	@media(min-width: $screen-md){
+	@media(min-width: $screen-lg){
 		font-size: 4rem;
 	}	
 }
@@ -693,14 +722,22 @@ a.main-header__button-overlay .nav-line{
 }
 
 .case-studies__home{
-	padding: 4rem 1rem;
+	padding: 1rem;
+	@media(min-width:$screen-md){
+		padding: 4rem 1rem;
+	}
 }
 
 .case-studies__title{
-	font-size: 2.625rem;
+	font-size: 2.025rem;
+	margin-bottom: .5rem;
 	text-transform: uppercase;
 	font-weight: 900;
-	margin-bottom: 2rem;
+
+	@media(min-width: $screen-md){
+		font-size: 2.625rem;
+		margin-bottom: 2rem;
+	}
 }
 
 .case-studies__subtitle{
@@ -722,7 +759,11 @@ a.main-header__button-overlay .nav-line{
 }
 
 .container.case__copy{
-	margin-bottom: 4rem;
+
+	@media(min-width: $screen-md){
+		margin-bottom: 4rem;
+	}
+	
 }
 
 .case-hero{
@@ -731,11 +772,14 @@ a.main-header__button-overlay .nav-line{
 }
 
 .investments--home{
-	padding: 8rem 0;
+
+	@media(min-width: $screen-md){
+		padding: 8rem 1rem;
+	}
 }
 
 .investment__content{
-	padding: 4rem;
+	padding: 2rem;
 }
 
 .investment__title--home{
@@ -787,4 +831,17 @@ a.main-header__button-overlay .nav-line{
 
 .border-footer{
 	margin-bottom: 0;
+}
+
+
+
+.case-studies__subtitle,.case-studies__title,.case-studies__btn, .case-studies__content,
+.case__images--left, .case__images--right, .investment__left, .investment__right{
+	opacity: 0;
+}
+
+.copy__footer{
+	padding: 2rem;
+	background: #333;
+	color: #fff;
 }

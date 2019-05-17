@@ -64,7 +64,7 @@
 		</div>
 	</header>
 
-	<div class="hero main-hero">
+	<div id="hero" class="hero main-hero">
 		<div class="container">
 			<div class="column hero__column">
 				<h1 class="hero__tagline">M<span class="small-c">c</span>Cann <br> Realty Partners</h1>
@@ -98,19 +98,19 @@
 	<section class="home__stats">
 		<div class="container">
 			<div class="columns">
-				<div class="column">
+				<div class="column is-one-third-tablet">
 					<div class="stat">
 						<span class="stat__int"><span class="int--1">8,700</span></span>
 						<span class="stat__label">Units Acquired</span>
 					</div>
 				</div>
-				<div class="column">
+				<div class="column is-one-third-tablet">
 					<div class="stat">
 						<span class="stat__int"><span class="int--2">3,300</span></span>
 						<span class="stat__label">Units Developed</span>
 					</div>
 				</div>
-				<div class="column">
+				<div class="column is-one-third-tablet">
 					<div class="stat">
 						<span class="stat__int">$<span class="int--3">1.00</span>Bil</span>
 						<span class="stat__label">Disposed Asset Value since inception</span>
@@ -120,15 +120,15 @@
 		</div>
 	</section>
 	<div class="bottom-border"></div>
-	<section class="case-studies__home">
+	<section id="case-studies" class="case-studies__home">
 		<div class="container case__copy">
-			<div class="columns">
-				<div class="column is-4">
+			<div class="columns is-desktop">
+				<div class="column is-5-desktop">
 					<h3 class="case-studies__subtitle">Learn about our</h3>
 					<h2 class="case-studies__title">Case Studies</h2>
-					<a class="btn" href="">Learn More</a>
+					<a class="btn case-studies__btn" href="">Learn More</a>
 				</div>
-				<div class="column is-8">
+				<div class="column is-7-desktop">
 					<p class="case-studies__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem pariatur provident corrupti nesciunt, voluptate, est quaerat, laborum culpa delectus quam voluptatibus. Beatae voluptate id facilis modi omnis est distinctio aspernatur. 
 						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam aut exercitationem praesentium necessitatibus sint at perspiciatis, sed provident neque, illum excepturi officiis delectus qui fugit ea voluptatibus, ad veritatis culpa.
 						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam aut exercitationem praesentium necessitatibus sint at perspiciatis, sed provident neque, illum excepturi officiis delectus qui fugit ea voluptatibus, ad veritatis culpa.</p>
@@ -138,11 +138,11 @@
 
 		<div class="case__images container is-fluid">
 			<div class="columns">
-				<div class="column is-4">
+				<div class="column is-4 case__images--left">
 					<img src="images/imag1.jpg" alt="">
 				</div>
 
-				<div class="is-8 column">
+				<div class="is-8 column case__images--right">
 					<div class="case-hero">
 
 					</div>
@@ -150,10 +150,10 @@
 			</div>
 		</div>
 	</section>
-	<section class="investments--home">
+	<section id="investment-home" class="investments--home">
 		<div class="container">
 			<div class="columns">
-				<div class="column is-6">
+				<div class="column is-6 investment__left">
 					<div class="swiper-container investment__swiper">
 						<!-- Additional required wrapper -->
 						<div class="swiper-wrapper">
@@ -174,7 +174,7 @@
 						<div class="swiper-scrollbar"></div>
 					</div>
 				</div>
-				<div class="column is-6">
+				<div class="column is-6 investment__right">
 					<div class="investment__content">
 						<h3 class="investment__title--home">Decades of experience and a strong track record</h3>
 						<p>
@@ -202,7 +202,7 @@
 					<p> Phone: (804) 290-8870 | Fax: (804) 747-7848</p>
 				</div>
 
-				<div class="column is-7 main-footer__nav">
+				<div class="column is-6 main-footer__nav">
 					<h4>Navigation</h4>
 					<ul class="main-footer__nav-list">
 						<li><a>Home</a></li>
@@ -218,6 +218,18 @@
 			</div>
 		</div>
 	</footer>
+	<div class="copy__footer">
+		<div class="container">
+			<div class="columns">
+				<div class="column is-6">
+
+				</div>
+				<div class="column is-6">
+
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -226,6 +238,8 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 	<script src="js/inert.js"></script>
