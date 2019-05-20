@@ -242,13 +242,13 @@ sub {
     color: #F69847; }
   @media (min-width: 768px) {
     .main-menu__item {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       padding: 1.4rem 0;
       padding-left: 8rem; } }
   @media (min-width: 1920px) {
     .main-menu__item {
-      font-size: 1.8rem;
-      padding: 2.2rem 0;
+      font-size: 1.2 rem;
+      padding: 2rem 0;
       padding-left: 8rem; } }
 
 .quick-nav__item {
@@ -348,7 +348,7 @@ a.main-header__button-overlay .nav-line {
     opacity: .6; }
 
 .hero.int-hero {
-  height: 60rem;
+  height: 40rem;
   width: 100%;
   background: url("/images/hero6.jpg") no-repeat center;
   background-size: cover;
@@ -610,3 +610,45 @@ a.main-header__button-overlay .nav-line {
 
 .team {
   padding: 2rem; }
+
+.team__item {
+  transition: all .2s ease-in-out; }
+  .team__item:hover {
+    border: 0.5rem solid #F69847; }
+
+.team__item img {
+  width: 100%; }
+
+.team__item figcaption {
+  padding: 1rem 2rem;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  margin-top: -.5rem;
+  font-size: .9rem; }
+
+.container.small {
+  max-width: 1170px; }
+
+.timeline {
+  padding-top: 16rem;
+  padding-bottom: 16rem; }
+
+.services {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+  @media (min-width: 768px) {
+    .services {
+      padding-top: 8rem;
+      padding-bottom: 8rem; } }
+
+.service__item {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  font-size: .9rem;
+  padding-left: 0; }
+  .service__item h4 {
+    font-size: 1rem; }

@@ -98,7 +98,7 @@ let controller = new ScrollMagic.Controller();
 
 let scene = new ScrollMagic.Scene({
   triggerElement: ".home__stats",
-  offset: -600
+  offset: -200
 })
 .on('start', function () {
   stats();
