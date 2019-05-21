@@ -25,7 +25,6 @@
 		"bash": "Location of the bash/shell script file"
 	},
 	"dependencies": {
-		"foundation-sites": "^6.5.3",
-		"hoek": "^5.0.3"
+		"foundation-sites": "^6.5.3"
 	}
 }
